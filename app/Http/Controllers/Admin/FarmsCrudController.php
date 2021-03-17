@@ -41,6 +41,25 @@ class FarmsCrudController extends CrudController
     {
         CRUD::setFromDb(); // columns
 
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'farms_code',
+            'label' => 'farm code'
+        ], 
+        false, 
+        function($value) { // if the filter is active
+             $this->crud->addClause('where', 'farms_code', 'LIKE', "%$value%");
+        });
+
+        $this->crud->addFilter([
+            'type'  => 'text',
+            'name'  => 'title',
+            'label' => 'Farm title'
+        ], 
+        false, 
+        function($value) { // if the filter is active
+             $this->crud->addClause('where', 'title', 'LIKE', "%$value%");
+        });
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,8 +77,15 @@ class FarmsCrudController extends CrudController
     {
         $this->crud->setOperationSetting('contentClass', 'col-md-12 bold-labels');
         CRUD::setValidation(FarmsRequest::class);
-
-        CRUD::setFromDb(); // fields
+        CRUD::field('farms_code')->type('text');
+        CRUD::field('title')->type('text');
+        $this->crud->addField([
+            'name'  => 'status',
+            'label' => 'Status',
+            'type'  => 'enum'
+        ]);
+        CRUD::field('status')->type('text');
+        //CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

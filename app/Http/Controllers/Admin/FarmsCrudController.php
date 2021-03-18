@@ -39,7 +39,10 @@ class FarmsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        CRUD::column('farms_code');
+        CRUD::column('title');
+        CRUD::column('status');
+        //CRUD::setFromDb(); // columns
 
         $this->crud->addFilter([
             'type'  => 'text',

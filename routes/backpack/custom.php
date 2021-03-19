@@ -46,4 +46,5 @@ Route::group([
         }
     }
     Route::crud('farms', 'FarmsCrudController');
+    Route::crud('beds', 'BedsCrudController');
 }); // this should be the absolute last line of this file

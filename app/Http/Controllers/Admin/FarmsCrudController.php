@@ -48,6 +48,7 @@ class FarmsCrudController extends CrudController
             'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
            
         ]);
+        $this->crud->enableExportButtons();
         //CRUD::setFromDb(); // columns
         $this->crud->addFilter([
             'type'  => 'text',
@@ -68,6 +69,7 @@ class FarmsCrudController extends CrudController
         function($value) { // if the filter is active
              $this->crud->addClause('where', 'title', 'LIKE', "%$value%");
         });
+        
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

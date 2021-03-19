@@ -40,4 +40,5 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('fluent-monster') }}"><i class="nav-icon la la-pastafarianism"></i> <span>Fluent Monsters</span></a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dummy') }}"><i class="nav-icon la la-poo"></i> <span>Dummies</span></a></li>
 <li class="nav-title">Cấu hình trang trại<img src="" alt="" sizes="" srcset=""></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('farms') }}'><i class='nav-icon la la-home'></i> Farms</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('farms') }}'><i class='nav-icon la la-home'></i> Quản Lý Farms</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('beds') }}'><i class='nav-icon la la-keyboard-o'></i> Quản Lý Luống</a></li>

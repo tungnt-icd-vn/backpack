@@ -14,7 +14,7 @@ class CreateFarms extends Migration
     {
         Schema::create('farms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('farms_code', 20)->unique();
+            $table->string('farms_code', 20);
             $table->string('title', 191);
             $table->text('location')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');

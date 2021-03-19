@@ -16,7 +16,6 @@ class FarmsCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -41,9 +40,14 @@ class FarmsCrudController extends CrudController
     {
         CRUD::column('farms_code');
         CRUD::column('title');
-        CRUD::column('status');
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+           
+        ]);
         //CRUD::setFromDb(); // columns
-
         $this->crud->addFilter([
             'type'  => 'text',
             'name'  => 'farms_code',
@@ -78,16 +82,23 @@ class FarmsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        $this->crud->setOperationSetting('contentClass', 'col-md-12 bold-labels');
+        CRUD::setOperationSetting('contentClass', 'col-md-12 bold-labels');
         CRUD::setValidation(FarmsRequest::class);
         CRUD::field('farms_code')->type('text');
         CRUD::field('title')->type('text');
-        $this->crud->addField([
-            'name'  => 'status',
-            'label' => 'Status',
-            'type'  => 'enum'
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
-        CRUD::field('status')->type('text');
+        CRUD::addField([
+            'name'            => 'location',
+            'label'           => "Đia chỉ",
+            'type'          => 'text',
+        ]);
         //CRUD::setFromDb(); // fields
 
         /**
@@ -106,5 +117,46 @@ class FarmsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+    protected function setupShowOperation()
+    {
+        CRUD::setOperationSetting('contentClass', 'col-md-8 bold-labels');
+        $this->crud->set('show.setFromDb', false);
+        $this->crud->addColumn([
+            'name' => 'farms_code',
+            'label' => 'Mã Nông trại',
+            'type' => 'text',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'title',
+            'label' => 'Tên Nông trại',
+            'type' => 'text',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'label' => 'Ngày tạo',
+            'type' => 'text',
+          
+        ]);
+        $this->crud->addColumn([
+            'name' => 'updated_at',
+            'label' => 'Ngày cập nhật',
+            'type' => 'text',
+           
+        ]);
+        $this->crud->addColumn([
+            'name' => 'location',
+            'label' => 'Địa chỉ',
+            'type' => 'text',
+           
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+           
+        ]);
+      
     }
 }

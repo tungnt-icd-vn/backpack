@@ -16,6 +16,7 @@ class CreateFarms extends Migration
             $table->increments('id');
             $table->string('farms_code', 20)->unique();
             $table->string('title', 191);
+            $table->text('location')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->nullableTimestamps();
             $table->softDeletes();    

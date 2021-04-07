@@ -34,7 +34,10 @@ class Farms extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function zones()
+    {
+        return $this->hasMany('\App\Models\Zones');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

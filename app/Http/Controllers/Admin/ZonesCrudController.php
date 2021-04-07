@@ -18,6 +18,8 @@ class ZonesCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\FetchOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -39,8 +41,37 @@ class ZonesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'title',
+            'label' => 'Tên khu',
+            'type'            => 'text',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Thuộc trang trại',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
 
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+
+        ]);
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'label' => 'Ngày tạo',
+            'type'            => 'date',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'updated_at',
+            'label' => 'Ngày Cập nhật',
+            'type'            => 'date',
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,8 +89,33 @@ class ZonesCrudController extends CrudController
     {
         CRUD::setValidation(ZonesRequest::class);
 
-        CRUD::setFromDb(); // fields
-
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'name' => 'title',
+            'label' => 'Tên Khu',
+            'type' => 'text',
+            'placeholder' => 'Nhập tên khu',
+        ]);
+        $this->crud->addField([
+            'name' => 'zones_code',
+            'label' => 'Mã khu',
+            'type' => 'text',
+            'hint' => 'Will be automatically generated from your title, if left empty.',
+            'disabled' => 'disabled'
+        ]);
+        $this->crud->addField([
+            'label' => 'Farm',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
+            // 'ajax' => true,
+        ]);
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Status',
+            'type' => 'enum',
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
@@ -77,4 +133,10 @@ class ZonesCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
+    public function fetchFarms()
+    {
+        return $this->fetch(\App\Models\Farms::class);
+    }
+
 }

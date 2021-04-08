@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BedsRequest;
+use App\Http\Requests\WorksRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BedsCrudController
+ * Class WorksCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BedsCrudController extends CrudController
+class WorksCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -24,9 +24,9 @@ class BedsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Beds::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/beds');
-        CRUD::setEntityNameStrings('beds', 'beds');
+        CRUD::setModel(\App\Models\Works::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/works');
+        CRUD::setEntityNameStrings('works', 'works');
     }
 
     /**
@@ -40,34 +40,19 @@ class BedsCrudController extends CrudController
         //CRUD::setFromDb(); // columns
         $this->crud->addColumn([
             'name' => 'title',
-            'label' => 'Tên Luống',
+            'label' => 'Tên công việc',
             'type'            => 'text',
         ]);
         $this->crud->addColumn([
-            'label' => 'Tên Nông trại',
-            'type' => 'relationship',
-            'name' => 'farms_code',
-            'entity' => 'farms',
-            'attribute' => 'title',
-        ]);
-        $this->crud->addColumn([
-            'label' => 'Thuộc khu ',
-            'type' => 'relationship',
-            'name' => 'zones_code',
-            'entity' => 'zones',
-            'attribute' => 'title',
-        ]);
-        $this->crud->addColumn([
-            'name' => 'status',
-            'label' => 'Trạng thái',
-            'type'            => 'select_from_array',
-            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'name' => 'image',
+            'label' => 'Hình ảnh',
+            'type'            => 'image',
 
         ]);
         $this->crud->addColumn([
-            'name' => 'created_at',
+            'name' => 'date',
             'label' => 'Ngày tạo',
-            'type'            => 'date',
+            'type'            => 'text',
         ]);
 
         /**
@@ -85,32 +70,33 @@ class BedsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BedsRequest::class);
+        CRUD::setValidation(WorksRequest::class);
 
-        //CRUD::setFromDb(); // fields
         $this->crud->addField([
-            'label' => 'Tên Nông trại',
-            'type' => 'relationship',
-            'name' => 'farms_code',
-            'entity' => 'farms',
-            'attribute' => 'title',
-        ]);
-        $this->crud->addField([
-            'label' => 'Thuộc khu ',
-            'type' => 'relationship',
-            'name' => 'zones_code',
-            'entity' => 'zones',
-            'attribute' => 'title',
-        ]);
-        $this->crud->addField([
-            'label' => 'Tên luống',
+            'label' => 'Tên Công việc',
             'name' => 'title',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'content',
+            'label' => 'Mô Tả công việc',
+            'type'  => 'wysiwyg',
+        ]);
+        $this->crud->addField([
+            'name' => 'date',
+            'label' => 'Date',
+            'type' => 'date',
+            'default' => date('Y-m-d'),
+        ]);
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'browse',
         ]);
         $this->crud->addField([
             'name' => 'status',
-            'label' => 'Trạng thái',
+            'label' => 'Status',
             'type' => 'enum',
-            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

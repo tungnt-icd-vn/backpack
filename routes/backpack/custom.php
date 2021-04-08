@@ -48,4 +48,8 @@ Route::group([
     Route::crud('farms', 'FarmsCrudController');
     Route::crud('beds', 'BedsCrudController');
     Route::crud('zones', 'ZonesCrudController');
+    Route::crud('works', 'WorksCrudController');
+    Route::crud('suppliers', 'SuppliersCrudController');
+    Route::crud('medicines', 'MedicinesCrudController');
+    Route::crud('fertilizers', 'FertilizersCrudController');
 }); // this should be the absolute last line of this file

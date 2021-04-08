@@ -39,7 +39,38 @@ class BedsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        //CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'title',
+            'label' => 'Tên Luống',
+            'type'            => 'text',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Tên Nông trại',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Thuộc khu ',
+            'type' => 'relationship',
+            'name' => 'zones_code',
+            'entity' => 'zones',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+
+        ]);
+        $this->crud->addColumn([
+            'name' => 'created_at',
+            'label' => 'Ngày tạo',
+            'type'            => 'date',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -58,8 +89,30 @@ class BedsCrudController extends CrudController
     {
         CRUD::setValidation(BedsRequest::class);
 
-        CRUD::setFromDb(); // fields
-
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên Nông trại',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Thuộc khu ',
+            'type' => 'relationship',
+            'name' => 'zones_code',
+            'entity' => 'zones',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Tên luống',
+            'name' => 'title',
+        ]);
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type' => 'enum',
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

@@ -34,7 +34,15 @@ class Beds extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function farms()
+    {
+        return $this->belongsTo('\App\Models\Farms', 'farms_code');
+    }
 
+    public function zones()
+    {
+        return $this->belongsTo('\App\Models\Zones', 'zones_code');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

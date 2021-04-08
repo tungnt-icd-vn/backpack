@@ -13,13 +13,10 @@ class FarmsTableSeeder extends Seeder
      */
     public function run()
     {
-        if (DB::table('farms')->where('farms_code', 'oriyaco_hcm')->count() == 0) {
-            DB::table('farms')->insert([
-                'farms_code'     => 'oriyaco_hcm',
-                'title'    => 'Oriyaco hcm',
-                'location' => 'cu chi - viet nam',
-                'status' => 'PUBLISHED',
-            ]);
-        }
+        DB::table('farms')->insert([
+            'title'    => 'Oriyaco hcm',
+            'location' => 'cu chi - viet nam',
+            'status' => 'PUBLISHED',
+        ]);
     }
 }

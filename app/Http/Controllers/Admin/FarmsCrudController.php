@@ -39,8 +39,10 @@ class FarmsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('farms_code');
-        CRUD::column('title');
+        $this->crud->addColumn([
+            'name'  => 'title',
+            'label' => 'Tên nông trại',
+        ]);
         $this->crud->addColumn([
             'name' => 'status',
             'label' => 'Trạng thái',
@@ -49,16 +51,6 @@ class FarmsCrudController extends CrudController
            
         ]);
         $this->crud->enableExportButtons();
-        //CRUD::setFromDb(); // columns
-        $this->crud->addFilter([
-            'type'  => 'text',
-            'name'  => 'farms_code',
-            'label' => 'farm code'
-        ], 
-        false, 
-        function($value) { // if the filter is active
-             $this->crud->addClause('where', 'farms_code', 'LIKE', "%$value%");
-        });
 
         $this->crud->addFilter([
             'type'  => 'text',

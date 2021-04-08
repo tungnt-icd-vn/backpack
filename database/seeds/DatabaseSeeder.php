@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(IconsTableSeeder::class);
         $this->call(FarmsTableSeeder::class);
         $this->call(ZonesTableSeeder::class);
+        $this->call(bedsTableSeeder::class);
         $this->call(\Backpack\Settings\database\seeds\SettingsTableSeeder::class);
         $this->call(PermissionManagerTablesSeeder::class);
         $this->call(UsersTableSeeder::class);

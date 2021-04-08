@@ -38,6 +38,10 @@ class Farms extends Model
     {
         return $this->hasMany('\App\Models\Zones');
     }
+    public function beds()
+    {
+        return $this->hasMany('\App\Models\Beds');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

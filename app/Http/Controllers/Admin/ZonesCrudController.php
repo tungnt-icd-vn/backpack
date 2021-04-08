@@ -97,14 +97,7 @@ class ZonesCrudController extends CrudController
             'placeholder' => 'Nhập tên khu',
         ]);
         $this->crud->addField([
-            'name' => 'zones_code',
-            'label' => 'Mã khu',
-            'type' => 'text',
-            'hint' => 'Will be automatically generated from your title, if left empty.',
-            'disabled' => 'disabled'
-        ]);
-        $this->crud->addField([
-            'label' => 'Farm',
+            'label' => 'Tên Nông trại',
             'type' => 'relationship',
             'name' => 'farms_code',
             'entity' => 'farms',
@@ -113,7 +106,7 @@ class ZonesCrudController extends CrudController
         ]);
         $this->crud->addField([
             'name' => 'status',
-            'label' => 'Status',
+            'label' => 'Trạng thái',
             'type' => 'enum',
         ]);
         /**

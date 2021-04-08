@@ -14,8 +14,8 @@ class CreateBeds extends Migration
     {
         Schema::create('beds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('beds_code', 50);
-            $table->string('farms_code', 20);
+            $table->string('zones_code', 100);
+            $table->string('farms_code', 100);
             $table->string('title', 191);
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->nullableTimestamps();

@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Zones;
+use App\Models\Beds;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ZonesTableSeeder extends Seeder
+class bedsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +13,10 @@ class ZonesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('zones')->insert([
+        DB::table('beds')->insert([
+            'zones_code' => '1',
             'farms_code'    => '1',
-            'title' => 'Khu a',
+            'title' => 'Luống a',
             'status' => 'PUBLISHED',
         ]);
     }

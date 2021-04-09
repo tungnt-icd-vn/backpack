@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-class CreateMedicinesTable extends Migration
+class CreateTrees extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +12,13 @@ class CreateMedicinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('medicines', function (Blueprint $table) {
+        Schema::create('trees', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 191);
-            $table->integer('supplier_code', 100);
+            $table->text('title');
+            $table->string('supplier_code', 100);
             $table->text('content')->nullable();
             $table->string('image')->nullable();
-            $table->date('date_medicines');
+            $table->date('date_harvest');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'INTERNAL'])->default('PUBLISHED');
             $table->nullableTimestamps();
             $table->softDeletes(); 
@@ -33,6 +32,6 @@ class CreateMedicinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medicines');
+        Schema::drop('trees');
     }
 }

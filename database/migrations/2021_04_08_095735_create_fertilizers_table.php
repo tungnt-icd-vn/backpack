@@ -15,8 +15,8 @@ class CreateFertilizersTable extends Migration
     {
         Schema::create('fertilizers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 191);
-            $table->integer('supplier_code', 100);
+            $table->string('title');
+            $table->string('supplier_code', 100);
             $table->text('content')->nullable();
             $table->string('image')->nullable();
             $table->date('date_fertilizers');

@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call(bedsTableSeeder::class);
         $this->call(worksTableSeeder::class);
         $this->call(suppliersTableSeeder::class);
+        $this->call(fertilizersTableSeeder::class);
+        $this->call(medicinesTableSeeder::class);
+        $this->call(pestsTableSeeder::class);
+        $this->call(treesTableSeeder::class);
         $this->call(\Backpack\Settings\database\seeds\SettingsTableSeeder::class);
         $this->call(PermissionManagerTablesSeeder::class);
         $this->call(UsersTableSeeder::class);

@@ -14,7 +14,7 @@ class CreateZones extends Migration
     {
         Schema::create('zones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('farms_code', 100);
+            $table->integer('farms_code');
             $table->string('title', 191);
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->nullableTimestamps();

@@ -34,7 +34,10 @@ class Fertilizers extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function suppliers()
+    {
+        return $this->belongsTo('\App\Models\Suppliers', 'supplier_code');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

@@ -38,6 +38,10 @@ class Suppliers extends Model
     {
         return $this->belongsToMany('\App\Models\Medicines');
     }
+    public function fertilizers()
+    {
+        return $this->belongsToMany('\App\Models\Fertilizers');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

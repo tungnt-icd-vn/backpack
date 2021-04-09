@@ -39,7 +39,32 @@ class MedicinesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        //CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'title',
+            'label' => 'Tên Thuốc',
+            'type'            => 'text',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Tên Nhà cung cấp',
+            'type' => 'relationship',
+            'name' => 'supplier_code',
+            'entity' => 'suppliers',
+            'attribute' => 'title',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+
+        ]);
+        $this->crud->addColumn([
+            'name' => 'date_medicines',
+            'label' => 'hạn dùng',
+            'type'            => 'date',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -57,8 +82,41 @@ class MedicinesCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(MedicinesRequest::class);
-
-        CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên Thuốc / phân',
+            'type' => 'text',
+            'name' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Nhà cung cấp',
+            'type' => 'relationship',
+            'name' => 'supplier_code',
+            'entity' => 'suppliers',
+            'attribute' => 'title',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'content',
+            'label' => 'Mô Tả thuốc (công dụng, dược học...)',
+            'type'  => 'wysiwyg',
+        ]);
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'browse',
+        ]);
+        $this->crud->addField([
+            'name' => 'date_medicines',
+            'label' => 'hạn dùng',
+            'type' => 'date',
+            'default' => date('Y-m-d'),
+        ]);
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Status',
+            'type' => 'enum',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+        ]);
+       // CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

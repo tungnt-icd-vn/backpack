@@ -34,7 +34,10 @@ class Suppliers extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function medicines()
+    {
+        return $this->belongsToMany('\App\Models\Medicines');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

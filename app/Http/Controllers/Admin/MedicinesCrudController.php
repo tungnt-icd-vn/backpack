@@ -102,7 +102,7 @@ class MedicinesCrudController extends CrudController
         $this->crud->addField([
             'name' => 'image',
             'label' => 'Image',
-            'type' => 'browse',
+            'type' => 'image',
         ]);
         $this->crud->addField([
             'name' => 'date_medicines',

@@ -19,7 +19,7 @@
         "spatie/laravel-translatable": "^4.0",
         "laravel/tinker": "^2.1",
         "facade/ignition": "^2.3.6",
-        "intervention/image": "^2.3",
+        "intervention/image": "^2.5",
         "backpack/revise-operation": "^1.0",
         "backpack/filemanager": "^1.0",
         "consoletvs/charts": "6.*",
@@ -34,8 +34,7 @@
         "symfony/dom-crawler": "^5.0.2|3.0.*|2.8.*",
         "laracasts/generators": "^2.0",
         "backpack/generators": "^3.0",
-        "itsgoingd/clockwork": "^5.0",
-        "barryvdh/laravel-debugbar": "^3.2"
+        "itsgoingd/clockwork": "^5.0"
     },
     "autoload": {
         "classmap": [

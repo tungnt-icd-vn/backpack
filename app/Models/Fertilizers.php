@@ -28,6 +28,16 @@ class Fertilizers extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function setImagesAttribute($value)
+    {
+        $attribute_name = "images";
+        $disk = config('backpack.base.root_disk_name');;
+        $destination_path = "public/uploads";
+
+        $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
+
+    // return $this->{$attribute_name}; // uncomment if this is a translatable field
+    }
 
     /*
     |--------------------------------------------------------------------------

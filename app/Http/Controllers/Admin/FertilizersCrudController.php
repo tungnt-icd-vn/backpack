@@ -39,7 +39,33 @@ class FertilizersCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+       // CRUD::setFromDb(); // columns
+       $this->crud->addColumn([
+        'name' => 'title',
+        'label' => 'Tên Thuốc',
+        'type'            => 'text',
+    ]);
+    $this->crud->addColumn([
+        'label' => 'Nhà cung cấp',
+        'type' => 'relationship',
+        'name' => 'supplier_code',
+        'entity' => 'suppliers',
+        'attribute' => 'title',
+    ]);
+
+    $this->crud->addColumn([
+        'name' => 'image',
+        'label' => 'Hình ảnh',
+        'type'            => 'image',
+
+    ]);
+    $this->crud->addColumn([
+        'name' => 'status',
+        'label' => 'Trạng thái',
+        'type'            => 'select_from_array',
+        'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+
+    ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -58,8 +84,43 @@ class FertilizersCrudController extends CrudController
     {
         CRUD::setValidation(FertilizersRequest::class);
 
-        CRUD::setFromDb(); // fields
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên phân Bón',
+            'type' => 'text',
+            'name' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Nhà cung cấp',
+            'type' => 'relationship',
+            'name' => 'supplier_code',
+            'entity' => 'suppliers',
+            'attribute' => 'title',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'content',
+            'label' => 'Mô Tả thuốc (công dụng, dược học...)',
+            'type'  => 'wysiwyg',
+        ]);
 
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'browse',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'date_fertilizers',
+            'label' => 'hạn dùng',
+            'type' => 'date',
+            'default' => date('Y-m-d'),
+        ]);
+        $this->crud->addField([
+            'name' => 'status',
+            'label' => 'Status',
+            'type' => 'enum',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

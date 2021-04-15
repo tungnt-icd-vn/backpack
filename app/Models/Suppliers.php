@@ -42,6 +42,10 @@ class Suppliers extends Model
     {
         return $this->belongsToMany('\App\Models\Fertilizers');
     }
+    public function trees()
+    {
+        return $this->belongsToMany('\App\Models\Trees');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

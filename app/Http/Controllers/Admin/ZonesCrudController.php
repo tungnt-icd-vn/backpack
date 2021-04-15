@@ -102,10 +102,13 @@ class ZonesCrudController extends CrudController
             'attribute' => 'title',
             // 'ajax' => true,
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Trạng thái',
-            'type' => 'enum',
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

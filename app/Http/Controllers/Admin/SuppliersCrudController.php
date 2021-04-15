@@ -39,8 +39,27 @@ class SuppliersCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn([
+            'label' => 'Tên nhà cung cấp',
+            'name' => 'title',
+        ]);
+        CRUD::addColumn([
+            'label' => 'Email',
+            'name' => 'email',
+            'type'  => 'email'
+        ]);
+        CRUD::addColumn([
+            'label' => 'Số điện thoại',
+            'name' => 'phone',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
 
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -57,8 +76,37 @@ class SuppliersCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(SuppliersRequest::class);
-
-        CRUD::setFromDb(); // fields
+        CRUD::addField([
+            'label' => 'Tên nhà cung cấp',
+            'name' => 'title',
+        ]);
+        CRUD::addField([
+            'label' => 'Địa chỉ',
+            'name' => 'local',
+        ]);
+        CRUD::addField([
+            'label' => 'Email',
+            'name' => 'email',
+            'type'  => 'email'
+        ]);
+        CRUD::addField([
+            'label' => 'Số điện thoại',
+            'name' => 'phone',
+            'type' => 'number',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'note',
+            'label' => 'ghi chú',
+        ]);
+       // CRUD::setFromDb(); // fields
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

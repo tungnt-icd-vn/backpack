@@ -88,15 +88,17 @@ class WorksCrudController extends CrudController
             'default' => date('Y-m-d'),
         ]);
         $this->crud->addField([
-            'name' => 'image',
-            'label' => 'Image',
-            'type' => 'browse',
+            'label' => "Ảnh công viêc",
+            'name' => "image",
+            'type' => 'image',
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Status',
-            'type' => 'enum',
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
             'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

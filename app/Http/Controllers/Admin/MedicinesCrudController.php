@@ -57,7 +57,7 @@ class MedicinesCrudController extends CrudController
             'name' => 'status',
             'label' => 'Trạng thái',
             'type'            => 'select_from_array',
-            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
 
         ]);
         $this->crud->addColumn([
@@ -110,12 +110,15 @@ class MedicinesCrudController extends CrudController
             'type' => 'date',
             'default' => date('Y-m-d'),
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Status',
-            'type' => 'enum',
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
             'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
+        
        // CRUD::setFromDb(); // fields
 
         /**

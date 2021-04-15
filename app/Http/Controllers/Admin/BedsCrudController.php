@@ -26,7 +26,7 @@ class BedsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Beds::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/beds');
-        CRUD::setEntityNameStrings('beds', 'beds');
+        CRUD::setEntityNameStrings('beds', 'Quản lý luống');
     }
 
     /**

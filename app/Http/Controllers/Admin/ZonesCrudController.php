@@ -28,7 +28,7 @@ class ZonesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Zones::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/zones');
-        CRUD::setEntityNameStrings('zones', 'zones');
+        CRUD::setEntityNameStrings('zones', 'Quản lý khu');
     }
 
     /**

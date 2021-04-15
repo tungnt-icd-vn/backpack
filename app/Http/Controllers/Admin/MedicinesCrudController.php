@@ -28,7 +28,7 @@ class MedicinesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Medicines::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/medicines');
-        CRUD::setEntityNameStrings('medicines', 'medicines');
+        CRUD::setEntityNameStrings('medicines', 'Quản lý thuốc');
     }
 
     /**
@@ -62,7 +62,7 @@ class MedicinesCrudController extends CrudController
         ]);
         $this->crud->addColumn([
             'name' => 'date_medicines',
-            'label' => 'hạn dùng',
+            'label' => 'Hạn dùng',
             'type'            => 'date',
         ]);
 

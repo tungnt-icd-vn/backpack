@@ -28,7 +28,7 @@ class PestsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Pests::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/pests');
-        CRUD::setEntityNameStrings('pests', 'pests');
+        CRUD::setEntityNameStrings('pests', 'Quản lý sâu bệnh');
     }
 
     /**

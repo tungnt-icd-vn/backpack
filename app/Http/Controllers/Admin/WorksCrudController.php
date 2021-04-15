@@ -26,7 +26,7 @@ class WorksCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Works::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/works');
-        CRUD::setEntityNameStrings('works', 'works');
+        CRUD::setEntityNameStrings('works', 'Quản lý công việc');
     }
 
     /**
@@ -48,6 +48,12 @@ class WorksCrudController extends CrudController
             'label' => 'Hình ảnh',
             'type'            => 'image',
 
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
         ]);
         $this->crud->addColumn([
             'name' => 'date',
@@ -88,15 +94,17 @@ class WorksCrudController extends CrudController
             'default' => date('Y-m-d'),
         ]);
         $this->crud->addField([
-            'name' => 'image',
-            'label' => 'Image',
-            'type' => 'browse',
+            'label' => "Ảnh công viêc",
+            'name' => "image",
+            'type' => 'image',
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Status',
-            'type' => 'enum',
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái",
+            'type'            => 'select_from_array',
             'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -28,7 +28,7 @@ class PestsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Pests::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/pests');
-        CRUD::setEntityNameStrings('pests', 'pests');
+        CRUD::setEntityNameStrings('pests', 'Quản lý sâu bệnh');
     }
 
     /**
@@ -39,8 +39,33 @@ class PestsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        //CRUD::setFromDb(); // columns
+        //CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'title',
+            'label' => 'Tên sâu bệnh',
+            'type'            => 'text',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Hình ảnh',
+            'type'            => 'image',
 
+        ]);
+        $this->crud->addColumn([
+            'name' => 'dangerous',
+            'label' => 'Mức độ gây hại',
+            'type'            => 'select_from_array',
+            'options' => ['high' => 'Nghiêm trọng', 'medium' => 'Trung bình', 'low' => 'ít nghiêm trọng'],
+
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,8 +83,38 @@ class PestsCrudController extends CrudController
     {
         CRUD::setValidation(PestsRequest::class);
 
-        CRUD::setFromDb(); // fields
-
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên Sâu Bệnh',
+            'name' => 'title',
+            'type'  => 'text',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'content',
+            'label' => 'Mô Tả Sâu Bệnh',
+            'type'  => 'wysiwyg',
+        ]);
+        $this->crud->addField([
+            'label' => "Ảnh công viêc",
+            'name' => "image",
+            'type' => 'image',
+        ]);
+        CRUD::addField([
+            'name'            => 'dangerous',
+            'label'           => "Mức độ gây hại",
+            'type'            => 'select_from_array',
+            'options' => ['high' => 'Nghiêm trọng', 'medium' => 'Trung bình', 'low' => 'ít nghiêm trọng'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
+        ]);
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

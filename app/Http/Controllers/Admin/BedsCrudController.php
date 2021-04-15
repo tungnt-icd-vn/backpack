@@ -26,7 +26,7 @@ class BedsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Beds::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/beds');
-        CRUD::setEntityNameStrings('beds', 'beds');
+        CRUD::setEntityNameStrings('beds', 'Quản lý luống');
     }
 
     /**
@@ -106,11 +106,13 @@ class BedsCrudController extends CrudController
             'label' => 'Tên luống',
             'name' => 'title',
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Trạng thái',
-            'type' => 'enum',
-            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

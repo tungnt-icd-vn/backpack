@@ -28,7 +28,7 @@ class MedicinesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Medicines::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/medicines');
-        CRUD::setEntityNameStrings('medicines', 'medicines');
+        CRUD::setEntityNameStrings('medicines', 'Quản lý thuốc');
     }
 
     /**
@@ -57,12 +57,12 @@ class MedicinesCrudController extends CrudController
             'name' => 'status',
             'label' => 'Trạng thái',
             'type'            => 'select_from_array',
-            'options'         => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
 
         ]);
         $this->crud->addColumn([
             'name' => 'date_medicines',
-            'label' => 'hạn dùng',
+            'label' => 'Hạn dùng',
             'type'            => 'date',
         ]);
 
@@ -110,12 +110,15 @@ class MedicinesCrudController extends CrudController
             'type' => 'date',
             'default' => date('Y-m-d'),
         ]);
-        $this->crud->addField([
-            'name' => 'status',
-            'label' => 'Status',
-            'type' => 'enum',
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
             'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
         ]);
+        
        // CRUD::setFromDb(); // fields
 
         /**

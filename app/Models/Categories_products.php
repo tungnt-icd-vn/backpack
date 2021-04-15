@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Suppliers extends Model
+class Categories_products extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Suppliers extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'suppliers';
+    protected $table = 'categories_products';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -34,18 +34,7 @@ class Suppliers extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function medicines()
-    {
-        return $this->belongsToMany('\App\Models\Medicines');
-    }
-    public function fertilizers()
-    {
-        return $this->belongsToMany('\App\Models\Fertilizers');
-    }
-    public function trees()
-    {
-        return $this->belongsToMany('\App\Models\Trees');
-    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

@@ -18,7 +18,7 @@ class CreateTrees extends Migration
             $table->string('supplier_code', 100);
             $table->text('content')->nullable();
             $table->string('image')->nullable();
-            $table->date('date_harvest');
+            $table->integer('date_harvest');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'INTERNAL'])->default('PUBLISHED');
             $table->nullableTimestamps();
             $table->softDeletes(); 

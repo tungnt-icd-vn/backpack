@@ -28,7 +28,8 @@ class TreesCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Trees::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/trees');
-        CRUD::setEntityNameStrings('trees', 'trees');
+        CRUD::setEntityNameStrings('trees', 'Quản lý giống cây');
+        CRUD::enableExportButtons();
     }
 
     /**
@@ -39,8 +40,36 @@ class TreesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+       // CRUD::setFromDb(); // columns
+       $this->crud->addColumn([
+        'name' => 'title',
+        'label' => 'Tên Giống Cây',
+        'type'            => 'text',
+    ]);
+    $this->crud->addColumn([
+        'label' => 'Tên Nhà cung cấp',
+        'type' => 'relationship',
+        'name' => 'supplier_code',
+        'entity' => 'suppliers',
+        'attribute' => 'title',
+    ]);
+    $this->crud->addColumn([
+        'name' => 'image',
+        'label' => 'Hình ảnh',
+        'type'            => 'image',
 
+    ]);
+    $this->crud->addColumn([
+        'name' => 'status',
+        'label' => 'Trạng thái',
+        'type'            => 'select_from_array',
+        'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+    ]);
+    $this->crud->addColumn([
+        'name' => 'date_harvest',
+        'label' => 'Số tháng có thể thu hoạch',
+        'type'  => 'number',
+    ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,8 +87,43 @@ class TreesCrudController extends CrudController
     {
         CRUD::setValidation(TreesRequest::class);
 
-        CRUD::setFromDb(); // fields
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên Cây trồng',
+            'type' => 'text',
+            'name' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Nhà cung cấp',
+            'type' => 'relationship',
+            'name' => 'supplier_code',
+            'entity' => 'suppliers',
+            'attribute' => 'title',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'content',
+            'label' => 'Mô Tả Cây trồng',
+            'type'  => 'wysiwyg',
+        ]);
+        $this->crud->addField([
+            'name' => 'image',
+            'label' => 'Ảnh cây trồng',
+            'type' => 'browse',
+        ]);
+        $this->crud->addField([
+            'name' => 'date_harvest',
+            'label' => 'Thời hạn thu hoạch (Ngày)',
+            'type' => 'number',
 
+        ]);
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái của farm",
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

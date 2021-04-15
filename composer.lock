@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "backpack/backupmanager",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/BackupManager.git",
-                "reference": "7e8dc4d32238befd7fe78d28c1ddb9e49779f17c"
+                "reference": "ad33731e6d6b878ee45b91e2aa4e8abd961c576a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/BackupManager/zipball/7e8dc4d32238befd7fe78d28c1ddb9e49779f17c",
-                "reference": "7e8dc4d32238befd7fe78d28c1ddb9e49779f17c",
+                "url": "https://api.github.com/repos/Laravel-Backpack/BackupManager/zipball/ad33731e6d6b878ee45b91e2aa4e8abd961c576a",
+                "reference": "ad33731e6d6b878ee45b91e2aa4e8abd961c576a",
                 "shasum": ""
             },
             "require": {
@@ -51,8 +51,8 @@
             "authors": [
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro",
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com",
                     "role": "Chief Architect & Web Developer"
                 }
             ],
@@ -69,9 +69,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/BackupManager/issues",
-                "source": "https://github.com/Laravel-Backpack/BackupManager/tree/v3.0.2"
+                "source": "https://github.com/Laravel-Backpack/BackupManager/tree/v3.0.3"
             },
-            "time": "2020-09-24T18:44:06+00:00"
+            "time": "2021-04-14T04:12:18+00:00"
         },
         {
             "name": "backpack/crud",
@@ -306,16 +306,16 @@
         },
         {
             "name": "backpack/logmanager",
-            "version": "v4.0.2",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/LogManager.git",
-                "reference": "1ddc98de9f0f9aa9a3a0d338af547052e1aae522"
+                "reference": "097cf7c0a1e658040bf9fbe727c79a0547eb4a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/1ddc98de9f0f9aa9a3a0d338af547052e1aae522",
-                "reference": "1ddc98de9f0f9aa9a3a0d338af547052e1aae522",
+                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/097cf7c0a1e658040bf9fbe727c79a0547eb4a78",
+                "reference": "097cf7c0a1e658040bf9fbe727c79a0547eb4a78",
                 "shasum": ""
             },
             "require": {
@@ -348,8 +348,8 @@
             "authors": [
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro",
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com",
                     "role": "Developer"
                 }
             ],
@@ -364,9 +364,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/LogManager/issues",
-                "source": "https://github.com/Laravel-Backpack/LogManager/tree/v4.0.2"
+                "source": "https://github.com/Laravel-Backpack/LogManager/tree/v4.0.4"
             },
-            "time": "2020-09-24T18:42:18+00:00"
+            "time": "2021-04-15T08:47:14+00:00"
         },
         {
             "name": "backpack/menucrud",
@@ -496,16 +496,16 @@
         },
         {
             "name": "backpack/pagemanager",
-            "version": "3.0.7",
+            "version": "3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/PageManager.git",
-                "reference": "7599394b9c72a0e472a34365f6b7a3b54cebb532"
+                "reference": "17f7fee807c62ba53ba34021846e4a7b60f943b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/PageManager/zipball/7599394b9c72a0e472a34365f6b7a3b54cebb532",
-                "reference": "7599394b9c72a0e472a34365f6b7a3b54cebb532",
+                "url": "https://api.github.com/repos/Laravel-Backpack/PageManager/zipball/17f7fee807c62ba53ba34021846e4a7b60f943b1",
+                "reference": "17f7fee807c62ba53ba34021846e4a7b60f943b1",
                 "shasum": ""
             },
             "require": {
@@ -540,8 +540,8 @@
             "authors": [
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro",
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com",
                     "role": "Architect & Developer"
                 }
             ],
@@ -562,22 +562,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/PageManager/issues",
-                "source": "https://github.com/Laravel-Backpack/PageManager/tree/3.0.7"
+                "source": "https://github.com/Laravel-Backpack/PageManager/tree/3.0.8"
             },
-            "time": "2021-02-01T10:32:38+00:00"
+            "time": "2021-04-14T04:25:25+00:00"
         },
         {
             "name": "backpack/permissionmanager",
-            "version": "6.0.5",
+            "version": "6.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/PermissionManager.git",
-                "reference": "f1ead608e2a9e2fce583e7a3761a7fa577a520ee"
+                "reference": "87cf8511a91b57bd5d9ac4ffa0ba507f5cf4de35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/PermissionManager/zipball/f1ead608e2a9e2fce583e7a3761a7fa577a520ee",
-                "reference": "f1ead608e2a9e2fce583e7a3761a7fa577a520ee",
+                "url": "https://api.github.com/repos/Laravel-Backpack/PermissionManager/zipball/87cf8511a91b57bd5d9ac4ffa0ba507f5cf4de35",
+                "reference": "87cf8511a91b57bd5d9ac4ffa0ba507f5cf4de35",
                 "shasum": ""
             },
             "require": {
@@ -617,8 +617,8 @@
                 },
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://www.tabacitu.ro",
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com",
                     "role": "Chief Architect"
                 }
             ],
@@ -639,22 +639,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/PermissionManager/issues",
-                "source": "https://github.com/Laravel-Backpack/PermissionManager/tree/6.0.5"
+                "source": "https://github.com/Laravel-Backpack/PermissionManager/tree/6.0.6"
             },
-            "time": "2021-02-23T08:35:08+00:00"
+            "time": "2021-04-14T04:18:57+00:00"
         },
         {
             "name": "backpack/revise-operation",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/revise-operation.git",
-                "reference": "6208330fda66499d0670aad88c7025c4e9840c8d"
+                "reference": "f05e69ffbce8c13de348862bdfdbef7ac0332e1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/revise-operation/zipball/6208330fda66499d0670aad88c7025c4e9840c8d",
-                "reference": "6208330fda66499d0670aad88c7025c4e9840c8d",
+                "url": "https://api.github.com/repos/Laravel-Backpack/revise-operation/zipball/f05e69ffbce8c13de348862bdfdbef7ac0332e1d",
+                "reference": "f05e69ffbce8c13de348862bdfdbef7ac0332e1d",
                 "shasum": ""
             },
             "require": {
@@ -687,8 +687,8 @@
             "authors": [
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro"
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com"
                 }
             ],
             "description": "Backpack interface for venturecraft/revisionable",
@@ -709,22 +709,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/revise-operation/issues",
-                "source": "https://github.com/Laravel-Backpack/revise-operation/tree/1.0.6"
+                "source": "https://github.com/Laravel-Backpack/revise-operation/tree/1.0.7"
             },
-            "time": "2020-10-16T14:35:00+00:00"
+            "time": "2021-04-13T05:23:55+00:00"
         },
         {
             "name": "backpack/settings",
-            "version": "3.0.9",
+            "version": "3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Settings.git",
-                "reference": "1efa57e3f4a23fee2eb8eec81da969e3cfc13034"
+                "reference": "164af798dbf5085864de29a84aeea59501f98b98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Settings/zipball/1efa57e3f4a23fee2eb8eec81da969e3cfc13034",
-                "reference": "1efa57e3f4a23fee2eb8eec81da969e3cfc13034",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Settings/zipball/164af798dbf5085864de29a84aeea59501f98b98",
+                "reference": "164af798dbf5085864de29a84aeea59501f98b98",
                 "shasum": ""
             },
             "require": {
@@ -757,8 +757,8 @@
             "authors": [
                 {
                     "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://www.tabacitu.ro",
+                    "email": "tabacitu@backpackforlaravel.com",
+                    "homepage": "https://backpackforlaravel.com",
                     "role": "Chief Architect & Lead Developer"
                 }
             ],
@@ -777,9 +777,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/Settings/issues",
-                "source": "https://github.com/Laravel-Backpack/Settings/tree/3.0.9"
+                "source": "https://github.com/Laravel-Backpack/Settings/tree/3.0.10"
             },
-            "time": "2021-03-15T07:06:35+00:00"
+            "time": "2021-04-14T04:31:24+00:00"
         },
         {
             "name": "balping/json-raw-encoder",
@@ -1952,16 +1952,16 @@
         },
         {
             "name": "facade/flare-client-php",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "f2b0969f2d9594704be74dbeb25b201570a98098"
+                "reference": "6bf380035890cb0a09b9628c491ae3866b858522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/f2b0969f2d9594704be74dbeb25b201570a98098",
-                "reference": "f2b0969f2d9594704be74dbeb25b201570a98098",
+                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/6bf380035890cb0a09b9628c491ae3866b858522",
+                "reference": "6bf380035890cb0a09b9628c491ae3866b858522",
                 "shasum": ""
             },
             "require": {
@@ -2005,7 +2005,7 @@
             ],
             "support": {
                 "issues": "https://github.com/facade/flare-client-php/issues",
-                "source": "https://github.com/facade/flare-client-php/tree/1.6.1"
+                "source": "https://github.com/facade/flare-client-php/tree/1.7.0"
             },
             "funding": [
                 {
@@ -2013,7 +2013,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-08T08:50:01+00:00"
+            "time": "2021-04-12T09:30:36+00:00"
         },
         {
             "name": "facade/ignition",
@@ -2649,16 +2649,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.36.2",
+            "version": "v8.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444"
+                "reference": "cf4082973abc796ec285190f0603380021f6d26f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
-                "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/cf4082973abc796ec285190f0603380021f6d26f",
+                "reference": "cf4082973abc796ec285190f0603380021f6d26f",
                 "shasum": ""
             },
             "require": {
@@ -2813,7 +2813,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-04-07T12:37:22+00:00"
+            "time": "2021-04-13T13:49:49+00:00"
         },
         {
             "name": "laravel/legacy-factories",
@@ -4394,16 +4394,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.15.1",
+            "version": "6.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "94be6b3bb5248727367a50161be90e6c422558b4"
+                "reference": "6b2229a07d92c2bb146ad9c5223fc32e9d74830c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/94be6b3bb5248727367a50161be90e6c422558b4",
-                "reference": "94be6b3bb5248727367a50161be90e6c422558b4",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/6b2229a07d92c2bb146ad9c5223fc32e9d74830c",
+                "reference": "6b2229a07d92c2bb146ad9c5223fc32e9d74830c",
                 "shasum": ""
             },
             "require": {
@@ -4468,7 +4468,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/6.15.1"
+                "source": "https://github.com/spatie/laravel-backup/tree/6.16.0"
             },
             "funding": [
                 {
@@ -4480,7 +4480,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-03-17T09:41:03+00:00"
+            "time": "2021-04-15T09:31:32+00:00"
         },
         {
             "name": "spatie/laravel-permission",

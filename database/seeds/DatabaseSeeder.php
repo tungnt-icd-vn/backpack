@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(medicinesTableSeeder::class);
         $this->call(pestsTableSeeder::class);
         $this->call(treesTableSeeder::class);
+        $this->call(CategoriesProductsTableSeeder::class);
         $this->call(\Backpack\Settings\database\seeds\SettingsTableSeeder::class);
         $this->call(PermissionManagerTablesSeeder::class);
         $this->call(UsersTableSeeder::class);

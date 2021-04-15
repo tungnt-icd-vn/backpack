@@ -23,7 +23,7 @@
   </ul>
 </li>
 
-<li class="nav-item nav-dropdown">
+<!-- <li class="nav-item nav-dropdown">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-cogs"></i> Advanced</a>
     <ul class="nav-dropdown-items">
       <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>File manager</span></a></li>
@@ -31,28 +31,39 @@
       <li class="nav-item"><a class="nav-link" href="{{ backpack_url('log') }}"><i class="nav-icon la la-terminal"></i> <span>Logs</span></a></li>
       <li class="nav-item"><a class="nav-link" href="{{ backpack_url('setting') }}"><i class="nav-icon la la-cog"></i> <span>Settings</span></a></li>
     </ul>
-</li>
-<li class="nav-item nav-dropdown">
+</li> -->
+<!-- <li class="nav-item nav-dropdown">
   <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-globe"></i> Translations</a>
   <ul class="nav-dropdown-items">
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('language') }}"><i class="nav-icon la la-flag-checkered"></i> Languages</a></li>
     <li class="nav-item"><a class="nav-link" href="{{ backpack_url('language/texts') }}"><i class="nav-icon la la-language"></i> Site texts</a></li>
   </ul>
-</li>
+</li> -->
 <li class="nav-title">Demo Entities</li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('monster') }}"><i class="nav-icon la la-optin-monster"></i> <span>Monsters</span></a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('icon') }}"><i class="nav-icon la la-info-circle"></i> <span>Icons</span></a></li>
+<!-- <li class="nav-item"><a class="nav-link" href="{{ backpack_url('icon') }}"><i class="nav-icon la la-info-circle"></i> <span>Icons</span></a></li> -->
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('product') }}"><i class="nav-icon la la-shopping-cart"></i> <span>Products</span></a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('fluent-monster') }}"><i class="nav-icon la la-pastafarianism"></i> <span>Fluent Monsters</span></a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dummy') }}"><i class="nav-icon la la-poo"></i> <span>Dummies</span></a></li>
 <li class="nav-title">Cấu hình trang trại<img src="" alt="" sizes="" srcset=""></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('farms') }}'><i class='nav-icon la la-home'></i> Quản Lý Farms</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('zones') }}'><i class='nav-icon la la-cubes'></i> Quản Lý Khu</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('beds') }}'><i class='nav-icon la la-windows'></i> Quản Lý Luống</a></li>
-
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('works') }}'><i class='nav-icon la la-yelp'></i> Quản Lý Công việc </a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('suppliers') }}'><i class='nav-icon la la-institution'></i> Quản Lý Nhà cung cấp</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('medicines') }}'><i class='nav-icon la la-flask'></i> Quản Lý Thuốc</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('fertilizers') }}'><i class='nav-icon la la-ge'></i> Quản Lý phân bón</a></li>
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-sliders"></i> Khởi tạo</a>
+    <ul class="nav-dropdown-items">
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('farms') }}'><i class='nav-icon la la-home'></i> Nông trại</a></li>
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('zones') }}'><i class='nav-icon la la-cubes'></i> Khu</a></li>
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('beds') }}'><i class='nav-icon la la-windows'></i> Luống</a></li>
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('suppliers') }}'><i class='nav-icon la la-institution'></i>Nhà cung cấp</a></li>
+    </ul>
+</li>
+<li class="nav-item nav-dropdown">
+  <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-legal"></i> Quản lý vật tư</a>
+  <ul class="nav-dropdown-items">
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('medicines') }}'><i class='nav-icon la la-flask'></i>Thuốc</a></li>
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('fertilizers') }}'><i class='nav-icon la la-ge'></i>phân bón</a></li>
+      <li class='nav-item'><a class='nav-link' href='{{ backpack_url('trees') }}'><i class='nav-icon la la-leaf'></i>giống cây</a></li>
+  </ul>
+</li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('works') }}'><i class='nav-icon la la-pied-piper-alt'></i> Quản Lý Công việc </a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('pests') }}'><i class='nav-icon la la-exclamation-triangle'></i> Quản Lý Sâu Bệnh</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('trees') }}'><i class='nav-icon la la-leaf'></i>  Quản Lý giống cây</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('categories_products') }}'><i class='nav-icon la la-tree'></i> Quản Lý Cây Trồng</a></li>

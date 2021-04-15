@@ -67,6 +67,13 @@ return [
             'dump_command_path'             => env('MYSQL_DUMP_PATH', '/Applications/MAMP/Library/bin/'), // only the path, so without 'mysqldump' or 'pg_dump'
             'dump_command_timeout'          => 60 * 5, // 5 minute timeout
             'dump_using_single_transaction' => true,
+            'dump' => [
+                'dump_binary_path' => '/Applications/MAMP/Library/bin/', // only the path, so without `mysqldump` or `pg_dump`; this is a working example from MAMP on Mac OS
+                'use_single_transaction',
+                'timeout' => 60 * 5, // 5 minute timeout
+                // 'exclude_tables' => ['table1', 'table2'],
+                // 'add_extra_option' => '--optionname=optionvalue',
+             ]
         ],
 
         'pgsql' => [

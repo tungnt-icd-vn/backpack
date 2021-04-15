@@ -306,16 +306,16 @@
         },
         {
             "name": "backpack/logmanager",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/LogManager.git",
-                "reference": "f803f26a49b64bea7c98c7bbf2fc9a4294e570d0"
+                "reference": "097cf7c0a1e658040bf9fbe727c79a0547eb4a78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/f803f26a49b64bea7c98c7bbf2fc9a4294e570d0",
-                "reference": "f803f26a49b64bea7c98c7bbf2fc9a4294e570d0",
+                "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/097cf7c0a1e658040bf9fbe727c79a0547eb4a78",
+                "reference": "097cf7c0a1e658040bf9fbe727c79a0547eb4a78",
                 "shasum": ""
             },
             "require": {
@@ -364,9 +364,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/LogManager/issues",
-                "source": "https://github.com/Laravel-Backpack/LogManager/tree/v4.0.3"
+                "source": "https://github.com/Laravel-Backpack/LogManager/tree/v4.0.4"
             },
-            "time": "2021-04-14T04:12:58+00:00"
+            "time": "2021-04-15T08:47:14+00:00"
         },
         {
             "name": "backpack/menucrud",
@@ -4394,16 +4394,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.15.1",
+            "version": "6.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "94be6b3bb5248727367a50161be90e6c422558b4"
+                "reference": "6b2229a07d92c2bb146ad9c5223fc32e9d74830c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/94be6b3bb5248727367a50161be90e6c422558b4",
-                "reference": "94be6b3bb5248727367a50161be90e6c422558b4",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/6b2229a07d92c2bb146ad9c5223fc32e9d74830c",
+                "reference": "6b2229a07d92c2bb146ad9c5223fc32e9d74830c",
                 "shasum": ""
             },
             "require": {
@@ -4468,7 +4468,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/6.15.1"
+                "source": "https://github.com/spatie/laravel-backup/tree/6.16.0"
             },
             "funding": [
                 {
@@ -4480,7 +4480,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-03-17T09:41:03+00:00"
+            "time": "2021-04-15T09:31:32+00:00"
         },
         {
             "name": "spatie/laravel-permission",

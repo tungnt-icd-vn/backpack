@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCategoriesProductsTable extends Migration
+class CreateCategoriesProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,10 @@ class CreateCategoriesProductsTable extends Migration
         Schema::create('categories_products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('trees_code');
+            $table->integer('farms_code');
+            $table->integer('zones_code');
+            $table->integer('beds_code');
+            $table->integer('users_code');
             $table->string('categories_products_code');
             $table->string('tittle');
             $table->date('date_start');

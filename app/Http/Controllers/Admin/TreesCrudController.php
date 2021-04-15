@@ -64,7 +64,6 @@ class TreesCrudController extends CrudController
         'label' => 'Trạng thái',
         'type'            => 'select_from_array',
         'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
-
     ]);
     $this->crud->addColumn([
         'name' => 'date_harvest',

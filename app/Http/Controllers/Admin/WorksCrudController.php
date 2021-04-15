@@ -50,6 +50,12 @@ class WorksCrudController extends CrudController
 
         ]);
         $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+        ]);
+        $this->crud->addColumn([
             'name' => 'date',
             'label' => 'Ngày tạo',
             'type'            => 'text',
@@ -94,7 +100,7 @@ class WorksCrudController extends CrudController
         ]);
         CRUD::addField([
             'name'            => 'status',
-            'label'           => "Trạng thái của farm",
+            'label'           => "Trạng thái",
             'type'            => 'select_from_array',
             'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
             'allows_null'     => false,

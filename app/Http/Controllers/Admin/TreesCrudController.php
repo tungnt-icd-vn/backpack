@@ -29,6 +29,7 @@ class TreesCrudController extends CrudController
         CRUD::setModel(\App\Models\Trees::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/trees');
         CRUD::setEntityNameStrings('trees', 'Quản lý giống cây');
+        CRUD::enableExportButtons();
     }
 
     /**

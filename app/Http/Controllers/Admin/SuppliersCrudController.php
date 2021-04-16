@@ -57,7 +57,7 @@ class SuppliersCrudController extends CrudController
             'name' => 'status',
             'label' => 'Trạng thái',
             'type'            => 'select_from_array',
-            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp'],
 
         ]);
         /**

@@ -28,7 +28,7 @@ class Categories_productsCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Categories_products::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/categories_products');
-        CRUD::setEntityNameStrings('categories_products', 'Quản lý Cây trồng');
+        CRUD::setEntityNameStrings('categories_products', 'Quản lý cây trồng');
     }
 
     /**
@@ -57,9 +57,40 @@ class Categories_productsCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(Categories_productsRequest::class);
-
-        CRUD::setFromDb(); // fields
-
+        //CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'label' => 'Tên Cây trồng',
+            'type' => 'text',
+            'name' => 'tittle',
+        ]);
+        $this->crud->addField([
+            'label' => 'Mã Cây trồng',
+            'type' => 'text',
+            'name' => 'categories_products_code',
+            'attributes' => [
+                'readonly'    => 'readonly',
+            ],
+        ]);
+        $this->crud->addField([
+            'name' => 'date_start',
+            'label' => 'Ngày gieo hạt',
+            'type' => 'date',
+            'default' => date('Y-m-d'),
+        ]);
+        $this->crud->addField([
+            'name' => 'date_end',
+            'label' => 'Ngày thu hoạch',
+            'type' => 'date',
+            'default' => date('Y-m-d'),
+        ]);
+        CRUD::addField([
+            'name'            => 'status',
+            'label'           => "Trạng thái",
+            'type'            => 'select_from_array',
+            'options' => ['plan' => 'Kế hoạch', 'planting' => 'Đang chăm sóc', 'harvested' => 'Thu Hoạch', 'cancel' => 'Tạm dừng'],
+            'allows_null'     => false,
+            'allows_multiple' => false,
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

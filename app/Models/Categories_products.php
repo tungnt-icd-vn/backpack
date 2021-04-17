@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 class Categories_products extends Model
@@ -28,7 +30,6 @@ class Categories_products extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -46,7 +47,7 @@ class Categories_products extends Model
     | ACCESSORS
     |--------------------------------------------------------------------------
     */
-
+    
     /*
     |--------------------------------------------------------------------------
     | MUTATORS

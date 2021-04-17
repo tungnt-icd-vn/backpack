@@ -38,6 +38,10 @@ class Trees extends Model
     {
         return $this->belongsTo('\App\Models\Suppliers', 'supplier_code');
     }
+    public function categories_products()
+    {
+        return $this->belongsToMany('\App\Models\Categories_products');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

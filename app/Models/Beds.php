@@ -43,6 +43,10 @@ class Beds extends Model
     {
         return $this->belongsTo('\App\Models\Zones', 'zones_code');
     }
+    public function categories_products()
+    {
+        return $this->hasMany('\App\Models\Categories_products');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

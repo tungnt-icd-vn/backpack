@@ -59,18 +59,46 @@ class Categories_productsCrudController extends CrudController
         CRUD::setValidation(Categories_productsRequest::class);
         //CRUD::setFromDb(); // fields
         $this->crud->addField([
-            'label' => 'Tên Cây trồng',
+            'label' => 'Tên Sản Phẩm Cây trồng',
             'type' => 'text',
             'name' => 'tittle',
         ]);
-        // $this->crud->addField([
-        //     'label' => 'Mã Cây trồng',
-        //     'type' => 'text',
-        //     'name' => 'categories_products_code',
-        //     'attributes' => [
-        //         'readonly'    => 'readonly',
-        //     ],
-        // ]);
+        $this->crud->addField([
+            'label' => 'Mã Cây trồng',
+            'type' => 'text',
+            'name' => 'categories_products_code',
+            'attributes' => [
+                'readonly'    => 'readonly',
+            ],
+        ]);
+        $this->crud->addField([
+            'label' => 'giống gieo trồng',
+            'type' => 'relationship',
+            'name' => 'trees_code',
+            'entity' => 'trees',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Thuộc nông trại',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Thuộc Khu',
+            'type' => 'relationship',
+            'name' => 'zones_code',
+            'entity' => 'zones',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Thuộc Luống',
+            'type' => 'relationship',
+            'name' => 'beds_code',
+            'entity' => 'beds',
+            'attribute' => 'title',
+        ]);
         $this->crud->addField([
             'name' => 'date_start',
             'label' => 'Ngày gieo hạt',

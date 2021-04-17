@@ -42,6 +42,10 @@ class Farms extends Model
     {
         return $this->hasMany('\App\Models\Beds');
     }
+    public function categories_products()
+    {
+        return $this->hasMany('\App\Models\Categories_products');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

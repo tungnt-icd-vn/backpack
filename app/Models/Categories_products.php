@@ -30,22 +30,30 @@ class Categories_products extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function store()
-    {
-
-        $this->crud->request->request->add('categories_products_code', 'User::ACCOUNT_TYPE_BASIC');
-       
-
-        $response = $this->traitStore();
-
-        return $response;
-
-    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function trees()
+    {
+        return $this->belongsTo('\App\Models\Trees', 'trees_code');
+    }
+
+    public function farms()
+    {
+        return $this->belongsTo('\App\Models\Farms', 'farms_code');
+    }
+
+    public function zones()
+    {
+        return $this->belongsTo('\App\Models\Zones', 'zones_code');
+    }
+
+    public function beds()
+    {
+        return $this->belongsTo('\App\Models\Beds', 'beds_code');
+    }
 
     /*
     |--------------------------------------------------------------------------

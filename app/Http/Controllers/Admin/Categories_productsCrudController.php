@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\Categories_productsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -64,13 +65,18 @@ class Categories_productsCrudController extends CrudController
             'name' => 'tittle',
         ]);
         $this->crud->addField([
-            'label' => 'Mã Cây trồng',
+            'label' => 'Tên Sản Phẩm Cây trồng',
             'type' => 'text',
             'name' => 'categories_products_code',
-            'attributes' => [
-                'readonly'    => 'readonly',
-            ],
         ]);
+        // $this->crud->addField([
+        //     'label' => 'Mã Cây trồng',
+        //     'type' => 'text',
+        //     'name' => 'categories_products_code',
+        //     'attributes' => [
+        //         'readonly'    => 'readonly',
+        //     ],
+        // ]);
         $this->crud->addField([
             'label' => 'giống gieo trồng',
             'type' => 'relationship',
@@ -135,5 +141,12 @@ class Categories_productsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    public function store(Request $request){
+        $this->beforeStore($request);
+        $this->request->merge(['categories_products_code' => '...']);
+        //all other code here
+        $this->afterStore($request, $entity);
     }
 }

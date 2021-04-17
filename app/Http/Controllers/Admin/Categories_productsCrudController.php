@@ -63,14 +63,14 @@ class Categories_productsCrudController extends CrudController
             'type' => 'text',
             'name' => 'tittle',
         ]);
-        $this->crud->addField([
-            'label' => 'Mã Cây trồng',
-            'type' => 'text',
-            'name' => 'categories_products_code',
-            'attributes' => [
-                'readonly'    => 'readonly',
-            ],
-        ]);
+        // $this->crud->addField([
+        //     'label' => 'Mã Cây trồng',
+        //     'type' => 'text',
+        //     'name' => 'categories_products_code',
+        //     'attributes' => [
+        //         'readonly'    => 'readonly',
+        //     ],
+        // ]);
         $this->crud->addField([
             'name' => 'date_start',
             'label' => 'Ngày gieo hạt',

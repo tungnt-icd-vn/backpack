@@ -30,6 +30,17 @@ class Categories_products extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function store()
+    {
+
+        $this->crud->request->request->add('categories_products_code', 'User::ACCOUNT_TYPE_BASIC');
+       
+
+        $response = $this->traitStore();
+
+        return $response;
+
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

@@ -63,26 +63,30 @@ class Categories_productsCrudController extends CrudController
             'label' => 'Tên Sản Phẩm Cây trồng',
             'type' => 'text',
             'name' => 'tittle',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
-            'label' => 'Tên Sản Phẩm Cây trồng',
+            'label' => 'Mã Cây trồng',
             'type' => 'text',
             'name' => 'categories_products_code',
+            'attributes' => [
+                'readonly'    => 'readonly',
+            ],
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
-        // $this->crud->addField([
-        //     'label' => 'Mã Cây trồng',
-        //     'type' => 'text',
-        //     'name' => 'categories_products_code',
-        //     'attributes' => [
-        //         'readonly'    => 'readonly',
-        //     ],
-        // ]);
         $this->crud->addField([
             'label' => 'giống gieo trồng',
             'type' => 'relationship',
             'name' => 'trees_code',
             'entity' => 'trees',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Thuộc nông trại',
@@ -90,6 +94,9 @@ class Categories_productsCrudController extends CrudController
             'name' => 'farms_code',
             'entity' => 'farms',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Thuộc Khu',
@@ -97,6 +104,9 @@ class Categories_productsCrudController extends CrudController
             'name' => 'zones_code',
             'entity' => 'zones',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Thuộc Luống',
@@ -104,18 +114,27 @@ class Categories_productsCrudController extends CrudController
             'name' => 'beds_code',
             'entity' => 'beds',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'name' => 'date_start',
             'label' => 'Ngày gieo hạt',
             'type' => 'date',
             'default' => date('Y-m-d'),
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'name' => 'date_end',
             'label' => 'Ngày thu hoạch',
             'type' => 'date',
             'default' => date('Y-m-d'),
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         CRUD::addField([
             'name'            => 'status',
@@ -124,6 +143,9 @@ class Categories_productsCrudController extends CrudController
             'options' => ['plan' => 'Kế hoạch', 'planting' => 'Đang chăm sóc', 'harvested' => 'Thu Hoạch', 'cancel' => 'Tạm dừng'],
             'allows_null'     => false,
             'allows_multiple' => false,
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -141,12 +163,5 @@ class Categories_productsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    public function store(Request $request){
-        $this->beforeStore($request);
-        $this->request->merge(['categories_products_code' => '...']);
-        //all other code here
-        $this->afterStore($request, $entity);
     }
 }

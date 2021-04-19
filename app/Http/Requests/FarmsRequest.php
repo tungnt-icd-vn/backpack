@@ -26,8 +26,8 @@ class FarmsRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
-        ];
+            'tittle' => 'required|max:255'
+       ];
     }
 
     /**
@@ -38,7 +38,7 @@ class FarmsRequest extends FormRequest
     public function attributes()
     {
         return [
-            //
+            'Vui lòng nhập tên Tên Nông trại'
         ];
     }
 

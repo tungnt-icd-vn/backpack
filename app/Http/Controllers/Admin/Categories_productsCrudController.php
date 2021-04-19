@@ -66,17 +66,14 @@ class Categories_productsCrudController extends CrudController
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6',
             ],
+            'hint' => 'Nên đặt tên dễ nhớ / Phân biệt được giữa các vụ gieo trồng',
         ]);
         $this->crud->addField([
             'label' => 'Mã Cây trồng',
-            //'type' => 'text',
             'type' => 'hidden',
             'name' => 'categories_products_code',
             'attributes' => [
                 'readonly'    => 'readonly',
-            ],
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-6',
             ],
         ]);
         $this->crud->addField([
@@ -155,9 +152,6 @@ class Categories_productsCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
-    public function setFullnameAttribute(){
-        return $this->attributes['categories_products_code'] = \Request::input('tittle') . ' ' . '214423423';
-     }
     /**
      * Define what happens when the Update operation is loaded.
      * 

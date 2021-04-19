@@ -26,7 +26,7 @@ class Categories_productsRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+             'tittle' => 'required|max:255'
         ];
     }
 
@@ -50,7 +50,7 @@ class Categories_productsRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'Vui lòng nhập tên Tên Sản Phẩm Cây trồng'
         ];
     }
 }

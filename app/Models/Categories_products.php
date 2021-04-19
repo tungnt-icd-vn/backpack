@@ -85,6 +85,7 @@ class Categories_products extends Model
         //make code
     }
 
+
     /*
     |--------------------------------------------------------------------------
     | MUTATORS

@@ -40,8 +40,46 @@ class Categories_productsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
-
+        //CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'tittle',
+            'label' => 'Tên Sản Phẩm Cây trồng',
+            'type'            => 'text',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Tên giống',
+            'type' => 'relationship',
+            'name' => 'trees_code',
+            'entity' => 'trees',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'nông trại',
+            'type' => 'relationship',
+            'name' => 'farms_code',
+            'entity' => 'farms',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Thuộc Khu',
+            'type' => 'relationship',
+            'name' => 'zones_code',
+            'entity' => 'zones',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Thuộc Luống',
+            'type' => 'relationship',
+            'name' => 'beds_code',
+            'entity' => 'beds',
+            'attribute' => 'title',
+        ]);
+        CRUD::addColumn([
+            'name'            => 'status',
+            'label'           => "Trạng thái",
+            'type'            => 'select_from_array',
+            'options' => ['plan' => 'Kế hoạch', 'planting' => 'Đang chăm sóc', 'harvested' => 'Thu Hoạch', 'cancel' => 'Tạm dừng'],
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -60,7 +98,7 @@ class Categories_productsCrudController extends CrudController
         CRUD::setValidation(Categories_productsRequest::class);
         //CRUD::setFromDb(); // fields
         $this->crud->addField([
-            'label' => 'Tên Sản Phẩm Cây trồng',
+            'label' => 'Cây trồng',
             'type' => 'text',
             'name' => 'tittle',
             'wrapperAttributes' => [

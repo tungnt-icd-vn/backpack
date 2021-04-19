@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Categories_products extends Model
 {
     use CrudTrait;
+    use Sluggable, SluggableScopeHelpers;
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +31,14 @@ class Categories_products extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function sluggable(): array
+    {
+        return [
+            'categories_products_code' => [
+                'source' => 'slug_or_title',
+            ],
+        ];
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -66,7 +75,16 @@ class Categories_products extends Model
     | ACCESSORS
     |--------------------------------------------------------------------------
     */
-    
+    public function getSlugOrTitleAttribute()
+    {
+        $makecode = $this->tittle . '_Code_'. $this->date_start;
+        if ($this->categories_products_code != '') {
+            return $this->categories_products_code;
+        }
+        return $makecode;
+        //make code
+    }
+
     /*
     |--------------------------------------------------------------------------
     | MUTATORS

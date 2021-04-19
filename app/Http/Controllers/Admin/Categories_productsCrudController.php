@@ -69,7 +69,8 @@ class Categories_productsCrudController extends CrudController
         ]);
         $this->crud->addField([
             'label' => 'Mã Cây trồng',
-            'type' => 'text',
+            //'type' => 'text',
+            'type' => 'hidden',
             'name' => 'categories_products_code',
             'attributes' => [
                 'readonly'    => 'readonly',
@@ -98,6 +99,7 @@ class Categories_productsCrudController extends CrudController
                 'class' => 'form-group col-md-6',
             ],
         ]);
+        
         $this->crud->addField([
             'label' => 'Thuộc Khu',
             'type' => 'relationship',
@@ -153,7 +155,9 @@ class Categories_productsCrudController extends CrudController
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }
-
+    public function setFullnameAttribute(){
+        return $this->attributes['categories_products_code'] = \Request::input('tittle') . ' ' . '214423423';
+     }
     /**
      * Define what happens when the Update operation is loaded.
      * 
@@ -163,5 +167,8 @@ class Categories_productsCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+        $this->crud->removeField('categories_products_code');
+        //not update code
+
     }
 }

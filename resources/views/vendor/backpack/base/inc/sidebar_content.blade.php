@@ -63,7 +63,9 @@
       <li class='nav-item'><a class='nav-link' href='{{ backpack_url('trees') }}'><i class='nav-icon la la-leaf'></i>giống cây</a></li>
   </ul>
 </li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('works') }}'><i class='nav-icon la la-pied-piper-alt'></i> Quản Lý Công việc </a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('works') }}'><i class='nav-icon la la-pied-piper-alt'></i> Quản Lý Công Việc </a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('pests') }}'><i class='nav-icon la la-exclamation-triangle'></i> Quản Lý Sâu Bệnh</a></li>
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('categories_products') }}'><i class='nav-icon la la-pagelines'></i> Quản Lý Cây Trồng</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('product_history') }}'><i class='nav-icon la la-calendar-check-o'></i> Nhật ký Sinh Trưởng</a></li>

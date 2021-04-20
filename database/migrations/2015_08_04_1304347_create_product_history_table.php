@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateArticleTagTable extends Migration
+class CreateProductHistoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,9 @@ class CreateArticleTagTable extends Migration
         Schema::create('product_history', function (Blueprint $table) {
             $table->increments('id');
             // $table->integer('categories_products_id')->unsigned();
-            $table->integer('user_create'); // gen auto
+            $table->text('note');
+            $table->string('images')->nullable();
+            $table->integer('user_create')->nullable(); // gen auto
             $table->enum('process_status', ['processing', 'done', 'cancel'])->default('done');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'INTERNAL'])->default('PUBLISHED');
             $table->nullableTimestamps();

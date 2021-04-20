@@ -55,4 +55,5 @@ Route::group([
     Route::crud('pests', 'PestsCrudController');
     Route::crud('trees', 'TreesCrudController');
     Route::crud('categories_products', 'Categories_productsCrudController');
+    Route::crud('product_history', 'Product_historyCrudController');
 }); // this should be the absolute last line of this file

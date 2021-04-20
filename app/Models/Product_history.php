@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class Works extends Model
+class Product_history extends Model
 {
     use CrudTrait;
 
@@ -17,7 +16,7 @@ class Works extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'works';
+    protected $table = 'product_history';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -36,7 +35,7 @@ class Works extends Model
         // or use your own disk, defined in config/filesystems.php
         $disk = config('backpack.base.root_disk_name'); 
         // destination path relative to the disk above
-        $destination_path = "public/uploads/works"; 
+        $destination_path = "public/uploads/product_history"; 
 
         // if the image was erased
         if ($value==null) {

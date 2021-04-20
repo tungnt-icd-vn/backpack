@@ -17,7 +17,6 @@ class CreateCategoriesProductTable extends Migration
             $table->integer('trees_code');
             $table->integer('farms_code');
             $table->integer('zones_code');
-            // $table->integer('beds_code');
             $table->integer('users_code');
             $table->string('categories_products_code');
             $table->string('tittle');

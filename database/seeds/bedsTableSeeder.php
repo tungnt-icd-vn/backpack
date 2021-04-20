@@ -19,5 +19,11 @@ class bedsTableSeeder extends Seeder
             'title' => 'Luống a',
             'status' => 'PUBLISHED',
         ]);
+        DB::table('beds')->insert([
+            'zones_code' => '2',
+            'farms_code'    => '1',
+            'title' => 'Luống b',
+            'status' => 'PUBLISHED',
+        ]);
     }
 }

@@ -42,9 +42,13 @@ class Zones extends Model
     {
         return $this->hasMany('\App\Models\Beds');
     }
+    // public function categories_products()
+    // {
+    //     return $this->hasMany('\App\Models\Categories_products');
+    // }
     public function categories_products()
     {
-        return $this->hasMany('\App\Models\Categories_products');
+        return $this->belongsToMany('\App\Models\Categories_products' , 'product_category_zone');
     }
     /*
     |--------------------------------------------------------------------------

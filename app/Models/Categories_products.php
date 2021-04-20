@@ -56,12 +56,12 @@ class Categories_products extends Model
 
     public function zones()
     {
-        return $this->belongsTo('\App\Models\Zones', 'zones_code');
+        return $this->belongsToMany('\App\Models\Zones', 'product_category_zone');
     }
 
     public function beds()
     {
-        return $this->belongsTo('\App\Models\Beds', 'beds_code');
+        return $this->belongsToMany('\App\Models\Beds', 'product_category_bed');
     }
 
     /*

@@ -63,17 +63,11 @@ class Categories_productsCrudController extends CrudController
         ]);
         $this->crud->addColumn([
             'label' => 'Thuộc Khu',
-            'type' => 'relationship',
-            'name' => 'zones_code',
-            'entity' => 'zones',
-            'attribute' => 'title',
+            'name' => 'zones',
         ]);
         $this->crud->addColumn([
             'label' => 'Thuộc Luống',
-            'type' => 'relationship',
-            'name' => 'beds_code',
-            'entity' => 'beds',
-            'attribute' => 'title',
+            'name' => 'beds',
         ]);
         CRUD::addColumn([
             'name'            => 'status',
@@ -135,23 +129,26 @@ class Categories_productsCrudController extends CrudController
                 'class' => 'form-group col-md-6',
             ],
         ]);
-        
         $this->crud->addField([
             'label' => 'Thuộc Khu',
             'type' => 'relationship',
-            'name' => 'zones_code',
-            'entity' => 'zones',
-            'attribute' => 'title',
+            'name' => 'zones', // the method that defines the relationship in your Model
+            'entity' => 'zones', // the method that defines the relationship in your Model
+            'attribute' => 'title', // foreign key attribute that is shown to user
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'hint' => 'có thể chọn nhiều khu',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6',
             ],
         ]);
         $this->crud->addField([
-            'label' => 'Thuộc Luống',
+            'label' => 'Thuộc luống',
             'type' => 'relationship',
-            'name' => 'beds_code',
-            'entity' => 'beds',
-            'attribute' => 'title',
+            'name' => 'beds', // the method that defines the relationship in your Model
+            'entity' => 'beds', // the method that defines the relationship in your Model
+            'attribute' => 'title', // foreign key attribute that is shown to user
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'hint' => 'có thể chọn nhiều luống',
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-6',
             ],

@@ -17,7 +17,7 @@ class CategoriesProductsTableSeeder extends Seeder
             'trees_code'    => '1',
             'farms_code'    => '1',
             'zones_code'    => '1',
-            'beds_code'    => '1',
+            // 'beds_code'    => '1',
             'users_code'    => '1',
             'categories_products_code' => 'cai_thao_01_02_4532_2323',
             'tittle'    => 'Cải thảo V3',

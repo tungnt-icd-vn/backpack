@@ -26,7 +26,7 @@ class TreesRequest extends FormRequest
     public function rules()
     {
         return [
-            'tittle' => 'required|max:255'
+            'title' => 'required|max:255'
        ];
     }
 

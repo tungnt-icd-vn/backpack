@@ -60,10 +60,9 @@ class Product_historyCrudController extends CrudController
 
         //CRUD::setFromDb(); // fields
         $this->crud->addField([
-            'label' => "Hình ảnh quá trình chăm sóc",
-            'name' => "images",
-            'type' => 'upload_multiple',
-            'upload' => true,
+            'label' => "Ảnh công viêc",
+            'name' => "image",
+            'type' => 'image',
         ]);
         CRUD::addField([   // Wysiwyg
             'name'  => 'content',

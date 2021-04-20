@@ -16,7 +16,7 @@ class CreateProductHistoryTable extends Migration
             $table->increments('id');
             // $table->integer('categories_products_id')->unsigned();
             $table->text('note');
-            $table->string('images')->nullable();
+            $table->string('image')->nullable();
             $table->integer('user_create')->nullable(); // gen auto
             $table->enum('process_status', ['processing', 'done', 'cancel'])->default('done');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'INTERNAL'])->default('PUBLISHED');

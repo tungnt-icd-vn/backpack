@@ -65,6 +65,7 @@ class Product_historyCrudController extends CrudController
             'attribute' => 'name', // foreign key attribute that is shown to user
             'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
             'hint' => 'có thể chọn nhiều người cùng thực hiện',
+        
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-4',
             ],
@@ -91,10 +92,13 @@ class Product_historyCrudController extends CrudController
             'type'  => 'summernote',
         ]);
         CRUD::addField([   // Wysiwyg
+            'name'  => 'user_create',
+            'type'  => 'hidden', 
+        ]);
+        CRUD::addField([   // Wysiwyg
             'name'  => 'date_process',
             'label' => 'Thời gian thực hiện',
             'type'  => 'datetime',
-            'allows_null' => true,
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-4',
             ],

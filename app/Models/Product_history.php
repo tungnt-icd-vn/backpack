@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Auth;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -77,7 +79,30 @@ class Product_history extends Model
             \Storage::disk('public_folder')->delete($obj->image);
         });
     }
-    
+
+    public function getDateProcessAttribute(){
+            return $this->date_process;
+    }
+
+    public function setDateProcessAttribute($value){
+        $dateNow = \Carbon\Carbon::now();
+        if($value){
+            $this->attributes['date_process'] =  $value;
+        }
+        else{
+            $this->attributes['date_process'] =  $dateNow;
+        }
+
+    }
+
+    public function getUserCreateAttribute(){
+        return $this->user_create;
+    }
+    public function setUserCreateAttribute($value){
+        $userId = Auth::user()->id;
+        dd($userId);
+        $this->attributes['user_create'] = $userId;
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

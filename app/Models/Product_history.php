@@ -77,12 +77,16 @@ class Product_history extends Model
             \Storage::disk('public_folder')->delete($obj->image);
         });
     }
+    
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function user()
+    {
+        return $this->belongsToMany('\App\User', 'product_category_user');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

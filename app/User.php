@@ -44,4 +44,9 @@ class User extends Authenticatable
 
         return parent::save($options);
     }
+
+    public function product_history()
+    {
+        return $this->belongsToMany('\App\User' , 'product_category_user');
+    }
 }

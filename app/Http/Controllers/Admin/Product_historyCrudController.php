@@ -17,7 +17,7 @@ class Product_historyCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -57,17 +57,47 @@ class Product_historyCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(Product_historyRequest::class);
-
-        //CRUD::setFromDb(); // fields
         $this->crud->addField([
-            'label' => "Ảnh công viêc",
+            'label' => 'Người thực hiện',
+            'type' => 'relationship',
+            'name' => 'user', // the method that defines the relationship in your Model
+            'entity' => 'user', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'hint' => 'có thể chọn nhiều người cùng thực hiện',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4',
+            ],
+        ]);
+        CRUD::addField([
+            'label' => "Ảnh công việc",
             'name' => "image",
             'type' => 'image',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4',
+            ],
+        ]);
+        CRUD::addField([
+            'label' => "Tài liệu (nếu có)",
+            'name' => "files",
+            'type' => 'browse_multiple',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4',
+            ],
         ]);
         CRUD::addField([   // Wysiwyg
             'name'  => 'content',
             'label' => 'Ghi chú',
             'type'  => 'summernote',
+        ]);
+        CRUD::addField([   // Wysiwyg
+            'name'  => 'date_process',
+            'label' => 'Thời gian thực hiện',
+            'type'  => 'datetime',
+            'allows_null' => true,
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-4',
+            ],
         ]);
         CRUD::addField([
             'name'            => 'process_status',
@@ -77,7 +107,7 @@ class Product_historyCrudController extends CrudController
             'allows_null'     => false,
             'allows_multiple' => false,
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-6',
+                'class' => 'form-group col-md-4',
             ],
         ]);
         CRUD::addField([
@@ -88,7 +118,7 @@ class Product_historyCrudController extends CrudController
             'allows_null'     => false,
             'allows_multiple' => false,
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-6',
+                'class' => 'form-group col-md-4',
             ],
         ]);
         /**

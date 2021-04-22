@@ -99,9 +99,9 @@ class Product_history extends Model
         return $this->user_create;
     }
     public function setUserCreateAttribute($value){
-        $userId = Auth::user()->id;
-        dd($userId);
+        $userId = Auth::guard('backpack')->user()['id'];
         $this->attributes['user_create'] = $userId;
+        // is get user id is login 
     }
     /*
     |--------------------------------------------------------------------------

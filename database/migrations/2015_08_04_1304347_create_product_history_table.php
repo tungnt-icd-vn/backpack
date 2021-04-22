@@ -16,6 +16,9 @@ class CreateProductHistoryTable extends Migration
             $table->increments('id');
             $table->string('categories_products_id');
             $table->text('note');
+            $table->string('works_id')->nullable();
+            $table->string('fertilizers_id')->nullable();
+            $table->string('medicines_id')->nullable();
             $table->string('image')->nullable();
             $table->string('files')->nullable();
             $table->integer('user_create')->nullable(); // gen auto

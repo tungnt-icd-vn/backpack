@@ -65,6 +65,7 @@ class Product_historyCrudController extends CrudController
             'attribute' => 'name', // foreign key attribute that is shown to user
             'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
             'hint' => 'có thể chọn nhiều người cùng thực hiện',
+
         
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-4',
@@ -102,6 +103,7 @@ class Product_historyCrudController extends CrudController
             'wrapperAttributes' => [
                 'class' => 'form-group col-md-4',
             ],
+            'hint' => 'không chọn ngày hệ thống tự lấy ngày hiện tại',
         ]);
         CRUD::addField([
             'name'            => 'process_status',
@@ -111,7 +113,7 @@ class Product_historyCrudController extends CrudController
             'allows_null'     => false,
             'allows_multiple' => false,
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-4',
+                'class' => 'form-group col-md-4 col-6',
             ],
         ]);
         CRUD::addField([
@@ -122,7 +124,7 @@ class Product_historyCrudController extends CrudController
             'allows_null'     => false,
             'allows_multiple' => false,
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-4',
+                'class' => 'form-group col-md-4 col-6',
             ],
         ]);
         /**

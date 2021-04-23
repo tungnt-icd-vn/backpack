@@ -112,6 +112,11 @@ class Product_history extends Model
     {
         return $this->belongsToMany('\App\User', 'product_category_user');
     }
+
+    public function works()
+    {
+        return $this->belongsTo('\App\Models\Works', 'works_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

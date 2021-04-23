@@ -58,6 +58,13 @@ class Product_historyCrudController extends CrudController
     {
         CRUD::setValidation(Product_historyRequest::class);
         $this->crud->addField([
+            'label' => 'Công việc thực hiện',
+            'type' => 'relationship',
+            'name' => 'works_id',
+            'entity' => 'works',
+            'attribute' => 'title',
+        ]);
+        $this->crud->addField([
             'label' => 'Người thực hiện',
             'type' => 'relationship',
             'name' => 'user', // the method that defines the relationship in your Model

@@ -82,7 +82,10 @@ class Works extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function product_history()
+    {
+        return $this->belongsToMany('\App\Models\Product_history');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

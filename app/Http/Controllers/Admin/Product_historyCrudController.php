@@ -39,8 +39,57 @@ class Product_historyCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        //CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'categories_products_id',
+            'entity' => 'categories_products',
+            'attribute' => 'tittle',
+            'type' => 'relationship',
+            'label' => 'Cây trồng',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'works_id',
+            'entity' => 'works',
+            'attribute' => 'title',
+            'type' => 'relationship',
+            'label' => 'Công việc',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Người phụ trách',
+            'name' => 'user',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'medicines_id',
+            'entity' => 'medicines',
+            'attribute' => 'title',
+            'type' => 'relationship',
+            'label' => 'Thuốc',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'fertilizers_id',
+            'entity' => 'fertilizers',
+            'attribute' => 'title',
+            'type' => 'relationship',
+            'label' => 'Thuốc',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Hình ảnh',
+            'type'            => 'image',
 
+        ]);
+        $this->crud->addColumn([
+            'name' => 'process_status',
+            'label' => 'Trạng thái Chăm Sóc',
+            'type'            => 'select_from_array',
+            'options' => ['processing' => 'Đang chăm sóc', 'done' => 'Hoàn thành', 'cancel' => 'Dừng'],
+        ]);
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Trạng thái',
+            'type'            => 'select_from_array',
+            'options' => ['PUBLISHED' => 'Công khai', 'DRAFT' => 'Bản nháp', 'INTERNAL' => 'Nội Bộ'],
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,11 +107,24 @@ class Product_historyCrudController extends CrudController
     {
         CRUD::setValidation(Product_historyRequest::class);
         $this->crud->addField([
+            'label' => 'Cây trồng được chăm sóc',
+            'type' => 'relationship',
+            'name' => 'categories_products_id',
+            'entity' => 'categories_products',
+            'attribute' => 'tittle',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+        ]);
+        $this->crud->addField([
             'label' => 'Công việc thực hiện',
             'type' => 'relationship',
             'name' => 'works_id',
             'entity' => 'works',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Người thực hiện',
@@ -72,26 +134,37 @@ class Product_historyCrudController extends CrudController
             'attribute' => 'name', // foreign key attribute that is shown to user
             'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
             'hint' => 'có thể chọn nhiều người cùng thực hiện',
-
-        
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-4',
+                'class' => 'form-group col-md-6',
             ],
         ]);
+        $this->crud->addField([
+            'label' => 'Có sử dụng thuốc',
+            'type' => 'relationship',
+            'name' => 'medicines_id',
+            'entity' => 'medicines',
+            'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+        ]);
+        $this->crud->addField([
+            'label' => 'Có sử dụng Phân',
+            'type' => 'relationship',
+            'name' => 'fertilizers_id',
+            'entity' => 'fertilizers',
+            'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+        ]);
+
         CRUD::addField([
-            'label' => "Ảnh công việc",
+            'label' => "Ảnh nhật ký",
             'name' => "image",
             'type' => 'image',
             'wrapperAttributes' => [
-                'class' => 'form-group col-md-4',
-            ],
-        ]);
-        CRUD::addField([
-            'label' => "Tài liệu (nếu có)",
-            'name' => "files",
-            'type' => 'browse_multiple',
-            'wrapperAttributes' => [
-                'class' => 'form-group col-md-4',
+                'class' => 'form-group col-md-6',
             ],
         ]);
         CRUD::addField([   // Wysiwyg

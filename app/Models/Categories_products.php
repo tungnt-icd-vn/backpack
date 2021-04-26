@@ -63,7 +63,10 @@ class Categories_products extends Model
     {
         return $this->belongsToMany('\App\Models\Beds', 'product_category_bed');
     }
-
+    public function product_history()
+    {
+        return $this->belongsToMany('\App\Models\Product_history');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

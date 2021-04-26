@@ -20,7 +20,6 @@ class CreateProductHistoryTable extends Migration
             $table->string('fertilizers_id')->nullable();
             $table->string('medicines_id')->nullable();
             $table->string('image')->nullable();
-            $table->string('files')->nullable();
             $table->integer('user_create')->nullable(); // gen auto
             $table->date('date_process');
             $table->enum('process_status', ['processing', 'done', 'cancel'])->default('done');

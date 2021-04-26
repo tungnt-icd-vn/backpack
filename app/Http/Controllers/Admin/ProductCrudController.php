@@ -56,20 +56,6 @@ class ProductCrudController extends CrudController
             'label' => 'Name',
             'type'  => 'text',
             'tab'   => 'Texts',
-
-            // optional
-            //'prefix' => '',
-            //'suffix' => '',
-            //'default'    => 'some value', // default value
-            //'hint'       => 'Some hint text', // helpful text, show up after input
-            //'attributes' => [
-            //'placeholder' => 'Some text when empty',
-            //'class' => 'form-control some-class'
-            //], // extra HTML attributes and values your input might need
-            //'wrapperAttributes' => [
-            //'class' => 'form-group col-md-12'
-            //], // extra HTML attributes for the field wrapper - mostly for resizing fields
-            //'readonly'=>'readonly',
         ]);
 
         CRUD::addField([   // Textarea

@@ -48,6 +48,10 @@ class Fertilizers extends Model
     {
         return $this->belongsTo('\App\Models\Suppliers', 'supplier_code');
     }
+    public function product_history()
+    {
+        return $this->belongsToMany('\App\Models\Product_history');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

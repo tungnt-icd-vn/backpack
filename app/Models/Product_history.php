@@ -117,6 +117,18 @@ class Product_history extends Model
     {
         return $this->belongsTo('\App\Models\Works', 'works_id');
     }
+    public function fertilizers()
+    {
+        return $this->belongsTo('\App\Models\Fertilizers', 'fertilizers_id');
+    }
+    public function medicines()
+    {
+        return $this->belongsTo('\App\Models\Medicines', 'medicines_id');
+    }
+    public function categories_products()
+    {
+        return $this->belongsTo('\App\Models\Categories_products', 'categories_products_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

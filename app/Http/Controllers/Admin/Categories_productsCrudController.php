@@ -31,6 +31,7 @@ class Categories_productsCrudController extends CrudController
         CRUD::setModel(\App\Models\Categories_products::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/categories_products');
         CRUD::setEntityNameStrings('categories_products', 'Quản lý cây trồng');
+        CRUD::enableExportButtons();
     }
 
     /**

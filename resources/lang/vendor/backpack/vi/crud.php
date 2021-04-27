@@ -81,17 +81,17 @@ return [
     'ajax_error_text'  => 'Lỗi khi tải trang. Vui lòng làm mới trang.',
 
     // DataTables translation
-    'emptyTable'     => 'No data available in table',
+    'emptyTable'     => 'Không có dữ liệu trong bảng',
     'info'           => 'Showing _START_ to _END_ of _TOTAL_ entries',
     'infoEmpty'      => 'No entries',
     'infoFiltered'   => '(filtered from _MAX_ total entries)',
     'infoPostFix'    => '.',
     'thousands'      => ',',
     'lengthMenu'     => '_MENU_ entries per page',
-    'loadingRecords' => 'Loading...',
-    'processing'     => 'Processing...',
+    'loadingRecords' => 'Đang tải...',
+    'processing'     => 'Đang thực hiện...',
     'search'         => 'Tìm kiếm    ',
-    'zeroRecords'    => 'No matching entries found',
+    'zeroRecords'    => 'Không tìm thấy mục nhập phù hợp',
     'paginate'       => [
         'first'    => 'Đầu tiên',
         'last'     => 'Cuối cùng',
@@ -169,11 +169,11 @@ return [
     'table_max_reached' => 'Maximum number of :max reached',
 
     // File manager
-    'file_manager' => 'File Manager',
+    'file_manager' => 'Quản lý tập tin',
 
     // InlineCreateOperation
-    'related_entry_created_success' => 'Related entry has been created and selected.',
-    'related_entry_created_error' => 'Could not create related entry.',
+    'related_entry_created_success' => 'Mục nhập liên quan đã được tạo và chọn.',
+    'related_entry_created_error' => 'Không thể tạo mục nhập có liên quan.',
 
     // returned when no translations found in select inputs
     'empty_translations' => '(empty)',

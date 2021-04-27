@@ -20,6 +20,7 @@ class FluentMonsterCrudController extends CrudController
         CRUD::setModel(\App\Models\Monster::class);
         CRUD::setRoute(config('backpack.base.route_prefix').'/fluent-monster');
         CRUD::setEntityNameStrings('fluent monster', 'fluent monsters');
+        CRUD::enableExportButtons();
     }
 
     public function fetchProduct()

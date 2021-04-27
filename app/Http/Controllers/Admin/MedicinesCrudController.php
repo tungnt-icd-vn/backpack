@@ -30,6 +30,7 @@ class MedicinesCrudController extends CrudController
         CRUD::setModel(\App\Models\Medicines::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/medicines');
         CRUD::setEntityNameStrings('medicines', 'Quản lý thuốc');
+        CRUD::enableExportButtons();
     }
 
     /**

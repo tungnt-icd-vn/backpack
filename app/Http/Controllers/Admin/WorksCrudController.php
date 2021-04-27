@@ -27,6 +27,7 @@ class WorksCrudController extends CrudController
         CRUD::setModel(\App\Models\Works::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/works');
         CRUD::setEntityNameStrings('works', 'Quản lý công việc');
+        CRUD::enableExportButtons();
     }
 
     /**

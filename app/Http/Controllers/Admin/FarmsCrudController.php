@@ -28,6 +28,7 @@ class FarmsCrudController extends CrudController
         CRUD::setModel(\App\Models\Farms::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/farms');
         CRUD::setEntityNameStrings('farms', 'Quản lý nông trại');
+        CRUD::enableExportButtons();
     }
 
     /**

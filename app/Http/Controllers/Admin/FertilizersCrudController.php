@@ -30,6 +30,7 @@ class FertilizersCrudController extends CrudController
         CRUD::setModel(\App\Models\Fertilizers::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/fertilizers');
         CRUD::setEntityNameStrings('fertilizers', 'Quản lý phân bón');
+        CRUD::enableExportButtons();
     }
 
     /**

@@ -23,6 +23,7 @@ class ProductCrudController extends CrudController
         CRUD::setModel(\App\Models\Product::class);
         CRUD::setRoute(config('backpack.base.route_prefix').'/product');
         CRUD::setEntityNameStrings('product', 'products');
+        CRUD::enableExportButtons();
     }
 
     protected function setupListOperation()

@@ -29,6 +29,7 @@ class Product_historyCrudController extends CrudController
         CRUD::setModel(\App\Models\Product_history::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/product_history');
         CRUD::setEntityNameStrings('product_history', 'Nhật ký sinh trưởng');
+        CRUD::enableExportButtons();
     }
 
     /**

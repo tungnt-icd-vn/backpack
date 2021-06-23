@@ -17,6 +17,8 @@ class CreateBeds extends Migration
             $table->string('zones_code', 100);
             $table->string('farms_code', 100);
             $table->string('title', 191);
+            $table->string('length',100);
+            $table->string('width',100);
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
             $table->nullableTimestamps();
             $table->softDeletes(); 

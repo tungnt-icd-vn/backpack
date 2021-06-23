@@ -59,6 +59,16 @@ class BedsCrudController extends CrudController
             'attribute' => 'title',
         ]);
         $this->crud->addColumn([
+            'label' => 'Chiều dài',
+            'name' => 'length',
+            'type'            => 'number',
+        ]);
+        $this->crud->addColumn([
+            'label' => 'Chiều rộng',
+            'name' => 'width',
+            'type'            => 'number',
+        ]);
+        $this->crud->addColumn([
             'name' => 'status',
             'label' => 'Trạng thái',
             'type'            => 'select_from_array',
@@ -95,6 +105,9 @@ class BedsCrudController extends CrudController
             'name' => 'farms_code',
             'entity' => 'farms',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Thuộc khu ',
@@ -102,10 +115,27 @@ class BedsCrudController extends CrudController
             'name' => 'zones_code',
             'entity' => 'zones',
             'attribute' => 'title',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         $this->crud->addField([
             'label' => 'Tên luống',
             'name' => 'title',
+        ]);
+        $this->crud->addField([
+            'label' => 'Chiều dài',
+            'name' => 'length',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+        ]);
+        $this->crud->addField([
+            'label' => 'Chiều rộng',
+            'name' => 'width',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
         ]);
         CRUD::addField([
             'name'            => 'status',

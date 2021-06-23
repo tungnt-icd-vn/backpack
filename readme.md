@@ -17,16 +17,6 @@ admin@example.com
 admin
 php artisan backpack:crud zones
    2 php artisan migrate
-   3 php artisan migrate
-   4 php artisan migrate zones
-   5 php artisan migrate:fresh zones
-   6 php artisan migrate zones
-   7 php artisan migrate
-   8 php artisan migrate --force
-   9 php artisan migrate:refresh
-  10 php artisan migrate
-  11 php artisan migrate:refresh
-  12 php artisan migrate
   13 php artisan migrate:refresh
   14 php artisan migrate
   15 composer install
@@ -35,24 +25,7 @@ php artisan backpack:crud zones
   18 php artisan migrate:refresh
   19 php artisan db:seed
   20 php artisan db:seed
-  21 php artisan migrate:refresh
-  22 php artisan db:seed
-  23 php artisan db:seed
-  24 php artisan migrate:refresh
-  25 php artisan db:seed
-  26 php artisan migrate:refresh
-  27 php artisan db:seed
-  28 php artisan make:seeder FarmsTableSeeder
-  29 php artisan make:seeder FarmsTableSeeder
-  30 php artisan migrate:refresh
-  31 php artisan db:seed
-  32 php artisan migrate:refresh
-  33 php artisan db:seed
-  34 n Container.php line 835:
-  35 composer dump-autoload
-  36 php artisan db:seed
-  37 php artisan make:seeder zonesTableSeeder
-  38 php artisan db:seed
+ 
   39 composer dump-autoload
   40 php artisan migrate:refresh
   41 php artisan db:seed

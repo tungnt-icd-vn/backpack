@@ -26,7 +26,9 @@
 	// But you do whatever you think it's best. Who am I, your mom?
 	$productCount = App\Models\Product::count();
 	$userCount = App\User::count();
-	$articleCount = \Backpack\NewsCRUD\app\Models\Article::count();
+	$articleCount = App\Models\trees::count();
+	$product_history = App\Models\product_history::count();
+	$product_count = App\Models\product_history::where('works_id', '2')->count();
 	$lastArticle = \Backpack\NewsCRUD\app\Models\Article::orderBy('date', 'DESC')->first();
 	$lastArticleDaysAgo = \Carbon\Carbon::parse($lastArticle->date)->diffInDays(\Carbon\Carbon::today());
  
@@ -38,7 +40,7 @@
 			->class('card border-0 text-white bg-primary')
 			->progressClass('progress-bar')
 			->value($userCount)
-			->description('Registered users.')
+			->description('Tổng Số Nông Dân')
 			->progress(100*(int)$userCount/1000)
 			->hint(1000-$userCount.' more until next milestone.'),
 		// alternatively, to use widgets as content, we can use the same add() method,
@@ -48,18 +50,18 @@
 		    ->class('card border-0 text-white bg-success')
 		    ->progressClass('progress-bar')
 		    ->value($articleCount)
-		    ->description('Articles.')
+		    ->description('Số Giống Cây Trồng')
 		    ->progress(80)
-		    ->hint('Great! Don\'t stop.')
+		    ->hint('Tổng số loại cây được tạo')
 		    ->onlyHere(), 
 		// alternatively, you can just push the widget to a "hidden" group
 		Widget::make()
 			->group('hidden')
 		    ->type('progress')
 		    ->class('card border-0 text-white bg-warning')
-		    ->value($lastArticleDaysAgo.' days')
+		    ->value($product_history.' ')
 		    ->progressClass('progress-bar')
-		    ->description('Since last article.')
+		    ->description('Nhật ký sinh trưởng')
 		    ->progress(30)
 		    ->hint('Post an article every 3-4 days.'),
 		// both Widget::make() and Widget::add() accept an array as a parameter
@@ -68,10 +70,10 @@
 			'type' => 'progress',
 			'class'=> 'card border-0 text-white bg-dark',
 			'progressClass' => 'progress-bar',
-			'value' => $productCount,
-			'description' => 'Products.',
-			'progress' => (int)$productCount/75*100,
-			'hint' => $productCount>75?'Try to stay under 75 products.':'Good. Good.',
+			'value' =>$product_count,
+			'description' => 'Đã thu Hoạch',
+			'progress' => (int)$product_history/75*100,
+			'hint' => $product_history>75?'Try to stay under 75 products.':'Good. Good.',
 		]),
 	]);
 

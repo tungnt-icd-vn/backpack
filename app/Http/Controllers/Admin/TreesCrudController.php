@@ -68,7 +68,7 @@ class TreesCrudController extends CrudController
     ]);
     $this->crud->addColumn([
         'name' => 'date_harvest',
-        'label' => 'Số tháng có thể thu hoạch',
+        'label' => 'Chu kỳ sinh trưởng',
         'type'  => 'number',
     ]);
         /**
@@ -113,7 +113,7 @@ class TreesCrudController extends CrudController
         ]);
         $this->crud->addField([
             'name' => 'date_harvest',
-            'label' => 'Thời hạn thu hoạch (Ngày)',
+            'label' => 'Chu kỳ sinh trưởng',
             'type' => 'number',
 
         ]);

@@ -11,7 +11,7 @@ class ChartjsPieController extends ChartController
     {
         $this->chart = new Chart();
 
-        $this->chart->dataset('Red', 'pie', [10, 20, 80, 30])
+        $this->chart->dataset('Red', 'pie', [15, 10, 80, 30])
                     ->backgroundColor([
                         'rgb(70, 127, 208)',
                         'rgb(66, 186, 150)',

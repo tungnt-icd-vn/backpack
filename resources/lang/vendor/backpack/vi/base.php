@@ -33,7 +33,7 @@ return [
     'change_password'        => 'Đổi mật khẩu',
     'unauthorized'           => 'Không được phép.',
     'dashboard'              => 'Bảng điều khiển',
-    'handcrafted_by'         => 'Thủ công bởi',
+    'handcrafted_by'         => 'Được tạo bởi',
     'powered_by'             => 'Được cung cấp bởi',
     'my_account'             => 'Tài khoản của tôi',
     'update_account_info'    => 'Cập nhật thông tin tài khoản',

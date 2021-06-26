@@ -80,29 +80,37 @@ class Product_history extends Model
         });
     }
 
-    public function getDateProcessAttribute(){
-            return $this->date_process;
-    }
+    // public function getDateProcessAttribute(){
+    //         return $this->date_process;
+    // }
 
-    public function setDateProcessAttribute($value){
-        $dateNow = \Carbon\Carbon::now();
-        if($value){
-            $this->attributes['date_process'] =  $value;
-        }
-        else{
-            $this->attributes['date_process'] =  $dateNow;
-        }
+    // public function setDateProcessAttribute($value){
+    //     $dateNow = \Carbon\Carbon::now();
+    //     if($value){
+    //         $this->attributes['date_process'] =  $value;
+    //     }
+    //     else{
+    //         $this->attributes['date_process'] =  $dateNow;
+    //     }
 
-    }
+    // }
 
-    public function getUserCreateAttribute(){
-        return $this->user_create;
-    }
-    public function setUserCreateAttribute($value){
-        $userId = Auth::guard('backpack')->user()['id'];
-        $this->attributes['user_create'] = $userId;
-        // is get user id is login 
-    }
+    // public function getUserCreateAttribute(){
+    //     $oUser= $this->user_create;
+    //     dd($oUser);
+    //     if($oUser != null)
+    //     {
+    //         return $this->user_create;
+    //     }
+    //     else{
+    //         return 1;
+    //     }
+    // }
+    // public function setUserCreateAttribute($value){
+    //     $userId = Auth::guard('backpack')->user()['id'];
+    //     $this->attributes['user_create'] = $userId;
+    //     // is get user id is login 
+    // }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

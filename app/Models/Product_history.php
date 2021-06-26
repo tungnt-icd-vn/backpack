@@ -84,16 +84,16 @@ class Product_history extends Model
     //         return $this->date_process;
     // }
 
-    // public function setDateProcessAttribute($value){
-    //     $dateNow = \Carbon\Carbon::now();
-    //     if($value){
-    //         $this->attributes['date_process'] =  $value;
-    //     }
-    //     else{
-    //         $this->attributes['date_process'] =  $dateNow;
-    //     }
+    public function setDateProcessAttribute($value){
+        $dateNow = \Carbon\Carbon::now();
+        if($value){
+            $this->attributes['date_process'] =  $value;
+        }
+        else{
+            $this->attributes['date_process'] =  $dateNow;
+        }
 
-    // }
+    }
 
     // public function getUserCreateAttribute(){
     //     $oUser= $this->user_create;
@@ -106,11 +106,11 @@ class Product_history extends Model
     //         return 1;
     //     }
     // }
-    // public function setUserCreateAttribute($value){
-    //     $userId = Auth::guard('backpack')->user()['id'];
-    //     $this->attributes['user_create'] = $userId;
-    //     // is get user id is login 
-    // }
+    public function setUserCreateAttribute($value){
+        $userId = Auth::guard('backpack')->user()['id'];
+        $this->attributes['user_create'] = $userId;
+        // is get user id is login 
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

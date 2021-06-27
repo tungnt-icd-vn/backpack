@@ -76,7 +76,7 @@ class Product_history extends Model
     {
         parent::boot();
         static::deleting(function($obj) {
-            \Storage::disk('public_folder')->delete($obj->image);
+            \Storage::disk('uploads')->delete($obj->image);
         });
     }
 
